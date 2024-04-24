@@ -1,0 +1,73 @@
+import { Box, Link, Typography, styled } from '@mui/material';
+import '../../Variavel/_color.css';
+import iconInstagram from '../../assets/img/icon-instagran.svg'
+import Logo from '../Logo/Logo';
+
+type Props = {}
+
+const Titulo1 = styled(Typography)({
+
+    fontSize: '1.5rem',
+    fontFamily: "Lobster",
+    fontWeight: 400,
+    color: 'var(--tituloResenha-color)',
+    padding: 0,
+    marginBottom: '-1.5rem',
+    textAlign: 'center',
+    marginLeft: '-1rem'
+
+})
+
+const Titulo2 = styled(Typography)({
+
+    fontSize: '2.8rem',
+    fontFamily: "Lobster",
+    fontWeight: 400,
+    color: 'var(--titulo-color)'
+})
+
+
+const NameLogo = (props: Props) => {
+    return (
+        <Box
+            display='flex'
+            flexDirection='row'
+            gap='2rem'
+            justifyContent='space-between'
+            margin='1rem .5rem'
+        >
+            <Box
+                display='flex'
+                flexDirection='column'
+            >
+                <Titulo1>
+                    Resenha
+                </Titulo1>
+                <Titulo2>
+                    Du chefe
+                </Titulo2>
+                <Typography variant="body1" fontSize='.7rem' margin='-.5rem 0 0 0'>
+                    DO TAMANHO DA SUA FOME !!
+                </Typography>
+                <Box
+                    display='flex'
+                    flexDirection='row'
+                    alignItems='center'
+                    gap='.2rem'
+                >
+                    <img src={iconInstagram} alt="Logo Resenha do Chefes" />
+                    <Link
+                        href="https://www.instagram.com/resenhaduchef/"
+                        underline="none"
+                        color="var(--titulo-color)"
+                    >
+                        {'@resenhaduchef'}
+                    </Link>
+                </Box>
+            </Box>
+            <Logo/>
+        </Box>
+    )
+}
+
+export default NameLogo
