@@ -1,9 +1,8 @@
-import { Box, Typography, styled } from '@mui/material'
-import RetanguloBox from '../RetanguloBox/RetanguloBox'
-import Star from '../../assets/img/star.png'
-import Heart from '../../assets/img/heart.png'
+import { Box, Typography, styled } from '@mui/material';
+import RetanguloBox from '../RetanguloBox/RetanguloBox';
 import React, { CSSProperties, useEffect } from 'react';
 import { getProduct } from '../../server/get'
+import IconsTag from '../IconsTag/IconsTag';
 
 type Props = {}
 
@@ -11,23 +10,19 @@ const containerBurguer: CSSProperties = {
 
   width: '160px',
   height: '220px',
-
-  backgroundColor: '#fff',
+  backgroundColor: 'var(--boxColor )',
   flexDirection: 'column',
   justifyContent: 'space-between',
   alignItems: 'flex-start',
-
-
 }
 
 const TituloProduto = styled(Typography)({
 
   fontFamily: 'Roboto Condensed',
-  color: '#3C2F2F',
+  color: 'var(--tituloHamburguer)',
   fontSize: '1.2rem',
   fontWeight: 'bolder',
-  margin: '0 1rem'
-
+  margin: '0 1rem',
 })
 
 const ImgProduto = styled('img')({
@@ -41,6 +36,10 @@ const Product: React.FC<Props> = () => {
 
 
   const [products, setProducts] = React.useState<any[]>([]);
+
+  function handleSelect(product:string) {
+    console.log(product)
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,13 +57,13 @@ const Product: React.FC<Props> = () => {
       flexWrap='wrap'
     >
       {products.map((product): any => (
-        <RetanguloBox sx={containerBurguer} key={product.id}>
+        <RetanguloBox sx={containerBurguer} key={product.id} handle={() => handleSelect(product)}>
           <ImgProduto src={product.image} alt={product.image} />
           <Box>
             <TituloProduto>
               {product.tipo}
             </TituloProduto>
-            <Typography variant='body1' sx={{ color: '#3C2F2F', margin: '0 1rem' }}>
+            <Typography variant='body1' sx={{ color: 'var(--tituloHamburguer)', margin: '0 1rem' }}>
               {product.name}
             </Typography>
           </Box>
@@ -78,15 +77,15 @@ const Product: React.FC<Props> = () => {
               display='flex'
               gap='.5rem'
             >
-              <img src={Star} alt='Estrela' width={20} height={20} />
-              <Typography variant='body1' sx={{ color: '#3C2F2F' }}>{product.valor}</Typography>
+              <IconsTag isStar={true} />
+              <Typography variant='body1' sx={{  color: 'var(--tituloHamburguer)' }}>{product.valor}</Typography>
             </Box>
-            <img src={Heart} alt='Estrela' width={20} height={20} />
+            <IconsTag isStar={false} />
           </Box>
         </RetanguloBox>
-      ))
-      }
-    </Box >
+      ))}
+
+    </Box>
   )
 }
 

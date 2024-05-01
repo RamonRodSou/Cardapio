@@ -10,7 +10,7 @@ const SearchBox = {
 
     width: '70%',
     height: 60,
-    backgroundColor: '#fff',
+    backgroundColor: 'var(--boxColor)',
 
 
     justifyContent: 'flex-start',
@@ -18,10 +18,9 @@ const SearchBox = {
 }
 
 const Pesquisar = styled(Typography)({
-    color: '#645353',
+    color: 'var(--tituloNameCinza)',
     fontSize: '1.2rem',
     fontFamily: 'Roboto Condensed',
-    fontWeight: 'bolder',
     margin: '0 1rem'
 
 })

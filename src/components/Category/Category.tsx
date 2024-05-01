@@ -5,15 +5,15 @@ type Props = {}
 
 
 const BoxStyleSelected = {
-
     padding: '1rem',
+
 }
 
 const BoxStyle = {
 
     padding: '1rem',
-    backgroundColor: '#fff',
-    color: '#6A6A6A'
+    backgroundColor: 'var(--boxColor )',
+    color: 'var(--tituloNameCinza)'
 }
 
 const Category = (props: Props) => {
@@ -23,6 +23,12 @@ const Category = (props: Props) => {
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
     };
+
+    function handle () {
+
+        console.log('teste')
+    }
+    
     return (
         <Tabs
             value={value}
@@ -31,25 +37,25 @@ const Category = (props: Props) => {
             scrollButtons="auto"
         >
 
-            <RetanguloBox sx={BoxStyleSelected}>
+            <RetanguloBox sx={BoxStyleSelected} handle={handle}>
                 <Typography>
                     Todos
                 </Typography>
             </RetanguloBox>
 
-            <RetanguloBox sx={BoxStyle}>
+            <RetanguloBox sx={BoxStyle} handle={handle}>
                 <Typography>
                     Combos
                 </Typography>
             </RetanguloBox>
 
-            <RetanguloBox sx={BoxStyle}>
+            <RetanguloBox sx={BoxStyle} handle={handle}>
                 <Typography>
                     Rodizio
                 </Typography>
             </RetanguloBox>
 
-            <RetanguloBox sx={BoxStyle}>
+            <RetanguloBox sx={BoxStyle} handle={handle}>
                 <Typography>
                     Bebidas
                 </Typography>

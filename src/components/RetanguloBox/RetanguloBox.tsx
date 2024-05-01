@@ -1,11 +1,11 @@
 import { Box, styled } from '@mui/material'
-import {CSSProperties, ReactNode } from 'react'
+import {CSSProperties } from 'react'
 
 type Props = {
 
-    children: ReactNode;
+    children: any;
     sx?: CSSProperties;
-
+    handle(): any | void;
 }
 
 const Filter = styled(Box)({
@@ -20,9 +20,10 @@ const Filter = styled(Box)({
     
 })
 
+
 const RetanguloBox = (props: Props) => {
     return (
-        <Filter sx={props.sx}>
+        <Filter sx={props.sx}  onClick={props.handle}>
             {props.children}
         </Filter>
     )

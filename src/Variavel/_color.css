@@ -1,6 +1,10 @@
 :root {
     --titulo-color : #ee704d;
     --tituloResenha-color : #ffffff;
-    --retangulosOp-color :#ca0717;
-
+    --tituloProdutoNome : #ffffff;
+    --tituloHamburguer: #3C2F2F;
+    --tituloNameCinza: #6a6a6a;
+    --letrasColor: '#ffffff';
+    --retangulosOp-color:#ca0717;
+    --boxColor : #ffffff;
 }
