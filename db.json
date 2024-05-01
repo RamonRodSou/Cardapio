@@ -1,0 +1,54 @@
+{
+  "produto": [
+    {
+      "id": 1,
+      "tipo": "Hamburguer",
+      "name": "Lá ele",
+      "image":"https://folhadomate.com/wp-content/uploads/2022/09/hamburguer-artesanal.jpg",
+      "valor": 30.50,
+      "star": 4.9,
+      "ingredientes": ["bacon", "queijo", "pepino"],
+      "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco. Carne ao ponto, maionese caseira absurda! Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
+    },
+    {
+      "id": 2,
+      "tipo": "HotDog",
+      "name": "Cachorrao",
+      "image":"https://www.thetacoguycatering.com/wp-content/uploads/2017/01/baconhotdogsnew1_srcset-large-768x576.jpg",
+      "valor": 30.50,
+      "star": 4.9,
+      "ingredientes": ["bacon", "queijo", "pepino"],
+      "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco. Carne ao ponto, maionese caseira absurda! Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
+
+    },
+    {
+      "id": 3,
+      "tipo": "Combo",
+      "name": "Guloso",
+      "image":"https://patch.com/img/cdn20/users/22920172/20220422/101456/styles/patch_image/public/burger___22101441072.jpg",
+      "valor": 30.50,
+      "star": 4.9,
+      "ingredientes": ["bacon", "queijo", "pepino"],
+      "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco. Carne ao ponto, maionese caseira absurda! Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
+
+    },
+    {
+      "id": 4,
+      "tipo": "XVingador",
+      "name": "Guloso",
+      "image":"https://i.pinimg.com/originals/97/7f/1e/977f1e4cbb6edea4c6eeace64629f942.jpg",
+      "valor": 30.50,
+      "star": 4.9,
+      "ingredientes": ["bacon", "queijo", "pepino"],
+      "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco. Carne ao ponto, maionese caseira absurda! Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
+
+    }
+  ],
+
+
+
+
+  "admin": {
+    "name": "typicode"
+  }
+}
