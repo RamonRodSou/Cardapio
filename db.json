@@ -49,11 +49,23 @@
 
     }
   ],
+  "profissional": [
+    {
+      "fistName": "Ramon",
+      "lastName": "Rodrigues",
+      "email": "ramon@rodsoudev.com",
+      "password":"123456",
+      "telephone": 21972923210,
+      "location": "rua a",
+      "instagram":"@rodsoudev",
+      "instragramLink":"https://www.instagram.com/ramonrodsoul/",
+      "businesName1": "Esquina",
+      "businesName2": "Da carne",
+      "info":"Do tamanho da sua fome",
+      "image":"https://www.instagram.com/resenhaduchef/"
+    }
 
+  ]
 
-
-
-  "admin": {
-    "name": "typicode"
-  }
+  
 }

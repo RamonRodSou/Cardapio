@@ -2,6 +2,9 @@ import { Box, Link, Typography, styled } from '@mui/material';
 import '../../Variavel/_color.css';
 import iconInstagram from '../../assets/img/icon-instagran.svg'
 import Logo from '../Logo/Logo';
+import React, { useEffect } from 'react';
+import { IProfissional } from '../../Interface/IProfissional';
+import { AdmAPIGet } from '../../server/AdmAPI';
 
 type Props = {}
 
@@ -28,45 +31,61 @@ const Titulo2 = styled(Typography)({
 
 
 const NameLogo = (props: Props) => {
+
+    const [dataProfissional, setDataProfissional] = React.useState<IProfissional[]>([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+
+            const data = await AdmAPIGet()
+            setDataProfissional(data)
+        }
+        fetchData();
+    }, [])
+
     return (
-        <Box
-            display='flex'
-            flexDirection='row'
-            gap='2rem'
-            justifyContent='space-between'
-            margin='1rem .5rem'
-        >
-            <Box
-                display='flex'
-                flexDirection='column'
-            >
-                <Titulo1>
-                    Resenha
-                </Titulo1>
-                <Titulo2>
-                    Du chefe
-                </Titulo2>
-                <Typography variant="body1" fontSize='.7rem' margin='-.5rem 0 0 0'>
-                    DO TAMANHO DA SUA FOME !!
-                </Typography>
+        <div>
+            {dataProfissional.map((item) => (
                 <Box
                     display='flex'
                     flexDirection='row'
-                    alignItems='center'
-                    gap='.2rem'
+                    gap='2rem'
+                    justifyContent='space-between'
+                    margin='1rem .5rem'
                 >
-                    <img src={iconInstagram} alt="Logo Resenha do Chefes" />
-                    <Link
-                        href="https://www.instagram.com/resenhaduchef/"
-                        underline="none"
-                        color="var(--titulo-color)"
+                    <Box
+                        display='flex'
+                        flexDirection='column'
                     >
-                        {'@resenhaduchef'}
-                    </Link>
+                        <Titulo1>
+                            {item.businesName1}
+                        </Titulo1>
+                        <Titulo2>
+                            {item.businesName2}
+                        </Titulo2>
+                        <Typography variant="body1" fontSize='.7rem' margin='-.5rem 0 0 0' textTransform='uppercase'>
+                            {item.info}
+                        </Typography>
+                        <Box
+                            display='flex'
+                            flexDirection='row'
+                            alignItems='center'
+                            gap='.2rem'
+                        >
+                            <img src={iconInstagram} alt="Logo Resenha do Chefes" />
+                            <Link
+                                href={item.instragramLink}
+                                underline="none"
+                                color="var(--titulo-color)"
+                            >
+                                {item.instagram}
+                            </Link>
+                        </Box>
+                    </Box>
+                    <Logo />
                 </Box>
-            </Box>
-            <Logo/>
-        </Box>
+            ))}
+        </div>
     )
 }
 
