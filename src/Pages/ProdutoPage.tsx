@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Box, Grid, Typography, styled } from '@mui/material'
 import IconsTag from '../components/IconsTag/IconsTag'
 import TemperaturaSlade from '../components/TemperaturaSlade/TemperaturaSlade'
 import RetanguloBox from '../components/RetanguloBox/RetanguloBox'
 import { useParams } from 'react-router-dom'
-import { IProduct } from '../Interface/IProduct'
 import { getProductById } from '../server/get'
+import { ProductContext } from '../contextApi/ProductContext'
 
 type Props = {
 }
@@ -14,6 +14,7 @@ const ImgProduto = styled('img')({
 
     width: '100%',
     height: '330px',
+    borderRadius: '15px'
 })
 const TituloProduto = styled(Typography)({
 
@@ -52,18 +53,21 @@ const addStyle = {
 
 const ProdutoPage: React.FC<Props> = () => {
 
-    const [count, setCount] = React.useState<number>(1)
-    const [temperatura, setTemperatura] = React.useState<number>(60)
-    const [product, setProduct] = useState<IProduct>();
-    const { id } = useParams<{ id:string }>();
+    const { id } = useParams<string>();
+    const { setPageBack,  product, setProduct, temperatura, setTemperatura, count, setCount} = useContext(ProductContext)
+
 
     useEffect(() => {
-        const fetchProduct = async () => {
-            const data = await getProductById(id);
-            setProduct(data);
-        };
-        fetchProduct();
-    }, [id]);
+        if (id) {
+            const fetchProduct = async () => {
+                const data = await getProductById(id);
+                setProduct(data);
+            };
+            fetchProduct();
+        }
+        setPageBack(true)
+
+    }, [id, setPageBack]);
 
     if (!product) {
         return <div>Carregando...</div>;
@@ -94,7 +98,6 @@ const ProdutoPage: React.FC<Props> = () => {
     return (
         <Box>
             <Box key={product.id} display={'flex'} flexDirection={'column'} justifyContent={'space-between'}>
-
                 {/* Imagem */}
                 <Box>
                     <ImgProduto src={product.image} alt={product.image} />

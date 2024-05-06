@@ -5,6 +5,7 @@ import Logo from '../Logo/Logo';
 import React, { useEffect } from 'react';
 import { IProfissional } from '../../Interface/IProfissional';
 import { AdmAPIGet } from '../../server/AdmAPI';
+import BackPage from '../BackPage/BackPage';
 
 type Props = {}
 
@@ -36,7 +37,6 @@ const NameLogo = (props: Props) => {
 
     useEffect(() => {
         const fetchData = async () => {
-
             const data = await AdmAPIGet()
             setDataProfissional(data)
         }
@@ -45,6 +45,7 @@ const NameLogo = (props: Props) => {
 
     return (
         <div>
+            <BackPage />
             {dataProfissional.map((item) => (
                 <Box
                     display='flex'

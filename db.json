@@ -38,8 +38,8 @@
     },
     {
       "id": 4,
-      "tipo": "XVingador",
-      "name": "Guloso",
+      "tipo": "Combo",
+      "name": "Vingador",
       "image":"https://i.pinimg.com/originals/97/7f/1e/977f1e4cbb6edea4c6eeace64629f942.jpg",
       "valor":" 30,49",
       "star": 4.9,

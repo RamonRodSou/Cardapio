@@ -1,10 +1,19 @@
+import { useContext, useEffect } from "react"
 import Category from "../components/Category/Category"
 import Product from "../components/Product/Product"
 import Search from "../components/Search/Search"
+import { ProductContext } from "../contextApi/ProductContext"
 
-type Props = {}
+const Home = () => {
+    
+    const { pageBack, setPageBack } = useContext(ProductContext)
+    useEffect(() => {
+        const isHomePage = window.location.pathname === "/";
+        if (isHomePage) {
+            setPageBack(!pageBack);
+        }
+    }, [setPageBack])
 
-const Home = (props: Props) => {
     return (
         <div>
             <Search/>

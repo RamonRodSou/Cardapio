@@ -62,7 +62,7 @@ const Product: React.FC<Props> = () => {
 
       {products.map((product) => (
         <RetanguloBox sx={containerBurguer} key={product.id} handle={() => handleSelect(product)}>
-          <Link to={`/produto/${product.id}`} style={{ textDecoration: 'none', width: '100%'}}>
+          <Link to={`/produto/${product.id}`} style={{ textDecoration: 'none', width: '100%' }}>
 
             <ImgProduto src={product.image} alt={product.image} />
             <Box>
