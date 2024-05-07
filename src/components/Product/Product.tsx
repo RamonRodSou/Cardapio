@@ -3,12 +3,14 @@ import RetanguloBox from '../RetanguloBox/RetanguloBox';
 import React, { CSSProperties, useContext, useEffect } from 'react';
 import { getProduct } from '../../server/get'
 import IconsTag from '../IconsTag/IconsTag';
-
 import { IProduct } from '../../Interface/IProduct';
 import { Link } from 'react-router-dom';
 import { ProductContext } from '../../contextApi/ProductContext';
 
-type Props = {}
+type Props = {
+
+  handleSelect(product:IProduct):void
+}
 const containerBurguer: CSSProperties = {
 
   width: '160px',
@@ -36,22 +38,19 @@ const ImgProduto = styled('img')({
   borderRadius: '15px'
 })
 
-const Product: React.FC<Props> = () => {
+const Product: React.FC<Props> = ({handleSelect}) => {
 
 
   const { data, setData, setTemperatura, setCount, search, isSearch, setPageBack } = useContext(ProductContext)
 
-  const filter = data.filter((prod: IProduct) =>
-    removeAccents(prod.name.toLowerCase()).includes(removeAccents(search.toLowerCase()))
+  const filter = data.filter((product: IProduct) =>
+    removeAccents(product.name.toLowerCase()).includes(removeAccents(search.toLowerCase()))
   )
 
   function removeAccents  (str: string) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
 
-  function handleSelect(product: IProduct) {
-    console.log(product)
-  }
 
 
   useEffect(() => {
@@ -142,7 +141,6 @@ const Product: React.FC<Props> = () => {
               </RetanguloBox>
             ))
       }
-
     </Box>
   )
 }

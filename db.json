@@ -5,48 +5,68 @@
       "tipo": "Hamburguer",
       "name": "Lá ele",
       "image":"https://folhadomate.com/wp-content/uploads/2022/09/hamburguer-artesanal.jpg",
-      "valor":" 30,49",
+      "valor":"30,49",
       "star": 4.9,
       "time": 10,
-      "ingredientes": ["bacon", "queijo", "pepino"],
+      "ingredientes": [
+        {"id":1,"nome": "Bacon", "quantidade": "1", "valor": "3,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478912754454649/bacon.webp?ex=663bcb8c&is=663a7a0c&hm=7314d6d998bc4e3fd2ab5163506c73ba2f757bed85146b8f4ae569c0bc4bd293&"},
+        {"id":2,"nome": "Cebola", "quantidade": "1", "valor": "2,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478913177817289/cebola.webp?ex=663bcb8c&is=663a7a0c&hm=6914e9ab65910ec52a6d216127f63416f67aa6674d7727cc0c28dda6c0413c43&"},
+        {"id":3,"nome": "Queijo", "quantidade": "1", "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237481605921247242/Queijo.webp?ex=663bce0e&is=663a7c8e&hm=bb7e6e16f7c6a2eceecb0e8a24a18988496b3e4df4bf0a8619dd201bc6b87d0c&"}
+      ],
+      "temperatura": 60,
+      "count": 1,
       "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco. Carne ao ponto, maionese caseira absurda! Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
-      
     },
     {
       "id": 2,
       "tipo": "HotDog",
       "name": "Cachorrão",
       "image":"https://www.thetacoguycatering.com/wp-content/uploads/2017/01/baconhotdogsnew1_srcset-large-768x576.jpg",
-      "valor":" 30,49",
+      "valor":"30,49",
       "star": 4.9,
       "time": 10,
-      "ingredientes": ["bacon", "queijo", "pepino"],
+      "ingredientes": [
+        {"id":1,"nome": "Bacon", "quantidade": "1", "valor": "3,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478912754454649/bacon.webp?ex=663bcb8c&is=663a7a0c&hm=7314d6d998bc4e3fd2ab5163506c73ba2f757bed85146b8f4ae569c0bc4bd293&"},
+        {"id":2,"nome": "Cebola", "quantidade": "1", "valor": "2,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478913177817289/cebola.webp?ex=663bcb8c&is=663a7a0c&hm=6914e9ab65910ec52a6d216127f63416f67aa6674d7727cc0c28dda6c0413c43&"},
+        {"id":3,"nome": "Queijo", "quantidade": "1", "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237481605921247242/Queijo.webp?ex=663bce0e&is=663a7c8e&hm=bb7e6e16f7c6a2eceecb0e8a24a18988496b3e4df4bf0a8619dd201bc6b87d0c&"}
+      ],     
+      "temperatura": 60,
+      "count": 1,
       "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco. Carne ao ponto, maionese caseira absurda! Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
-
     },
     {
       "id": 3,
       "tipo": "Combo",
       "name": "Guloso",
       "image":"https://patch.com/img/cdn20/users/22920172/20220422/101456/styles/patch_image/public/burger___22101441072.jpg",
-      "valor":" 30,49",
+      "valor":"30,49",
       "star": 4.9,
       "time": 10,
-      "ingredientes": ["bacon", "queijo", "pepino"],
+      "ingredientes": [
+        {"id":1,"nome": "Bacon", "quantidade": "1", "valor": "3,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478912754454649/bacon.webp?ex=663bcb8c&is=663a7a0c&hm=7314d6d998bc4e3fd2ab5163506c73ba2f757bed85146b8f4ae569c0bc4bd293&"},
+        {"id":2,"nome": "Cebola", "quantidade": "1", "valor": "2,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478913177817289/cebola.webp?ex=663bcb8c&is=663a7a0c&hm=6914e9ab65910ec52a6d216127f63416f67aa6674d7727cc0c28dda6c0413c43&"},
+        {"id":3,"nome": "Queijo", "quantidade": "1", "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237481605921247242/Queijo.webp?ex=663bce0e&is=663a7c8e&hm=bb7e6e16f7c6a2eceecb0e8a24a18988496b3e4df4bf0a8619dd201bc6b87d0c&"}
+      ],    
+      "temperatura": 60,
+      "count": 1,
       "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco. Carne ao ponto, maionese caseira absurda! Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
-
     },
     {
       "id": 4,
       "tipo": "Combo",
       "name": "Vingador",
       "image":"https://i.pinimg.com/originals/97/7f/1e/977f1e4cbb6edea4c6eeace64629f942.jpg",
-      "valor":" 30,49",
+      "valor":"30,49",
       "star": 4.9,
       "time": 10,
-      "ingredientes": ["bacon", "queijo", "pepino"],
+      "ingredientes": [
+        {"id":1,"nome": "Bacon", "quantidade": "1", "valor": "3,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478912754454649/bacon.webp?ex=663bcb8c&is=663a7a0c&hm=7314d6d998bc4e3fd2ab5163506c73ba2f757bed85146b8f4ae569c0bc4bd293&"},
+        {"id":2,"nome": "Cebola", "quantidade": "1", "valor": "2,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478913177817289/cebola.webp?ex=663bcb8c&is=663a7a0c&hm=6914e9ab65910ec52a6d216127f63416f67aa6674d7727cc0c28dda6c0413c43&"},
+        {"id":3,"nome": "Queijo", "quantidade": "1", "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237481605921247242/Queijo.webp?ex=663bce0e&is=663a7c8e&hm=bb7e6e16f7c6a2eceecb0e8a24a18988496b3e4df4bf0a8619dd201bc6b87d0c&"}
+      ],          
+      "temperatura": 60,
+      "count": 1,
       "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco. Carne ao ponto, maionese caseira absurda! Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
-
     }
   ],
   "profissional": [

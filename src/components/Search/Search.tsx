@@ -1,8 +1,9 @@
 import { Box, TextField, Typography, styled } from '@mui/material'
 import '../../Variavel/_color.css';
-import settings from '../../assets/img/settings-sliders.png'
 import Lupa from '../../assets/img/Lupa.png'
-import RetanguloBox from '../RetanguloBox/RetanguloBox';
+
+// import RetanguloBox from '../RetanguloBox/RetanguloBox';
+// import settings from '../../assets/img/settings-sliders.png'
 
 type Props = {
     search:string 
@@ -12,9 +13,9 @@ type Props = {
 const SearchBox = styled(TextField)({
 
     backgroundColor: 'var(--boxColor)',
-    width: '70%',
+    width: '100%',
     borderRadius: '20px',
-
+    margin:'.5rem'
 })
 
 const labelDiv = {
@@ -45,10 +46,10 @@ const Search: React.FC<Props> = ({search, setSearch}) => {
                 }
 
             />
-
+{/* 
             <RetanguloBox sx={{ width: 60, height: 60 }} handle={() => ('')}>
                 <img src={settings} alt="Configurações para filtro" />
-            </RetanguloBox>
+            </RetanguloBox> */}
 
         </Box >
     )

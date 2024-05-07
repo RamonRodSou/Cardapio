@@ -1,5 +1,5 @@
 import { Box } from '@mui/material'
-import logo from '../../assets/img/Logo.png';
+import logo from '../../assets/img/Logo.webp';
 
 type Props = {}
 

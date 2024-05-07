@@ -6,6 +6,7 @@ import RetanguloBox from '../components/RetanguloBox/RetanguloBox'
 import { useParams } from 'react-router-dom'
 import { getProductById } from '../server/get'
 import { ProductContext } from '../contextApi/ProductContext'
+import { Link } from 'react-router-dom'
 
 type Props = {
 }
@@ -54,8 +55,7 @@ const addStyle = {
 const ProdutoPage: React.FC<Props> = () => {
 
     const { id } = useParams<string>();
-    const { setPageBack,  product, setProduct, temperatura, setTemperatura, count, setCount} = useContext(ProductContext)
-
+    const { setPageBack,  product, setProduct, temperatura, setTemperatura, count, setCount, selectedProduct} = useContext(ProductContext)
 
     useEffect(() => {
         if (id) {
@@ -91,8 +91,11 @@ const ProdutoPage: React.FC<Props> = () => {
     }
 
     function handleAddCart(): void {
-        console.log(count)
-        console.log(temperatura)
+
+        selectedProduct.temperatura = temperatura
+        selectedProduct.count = count 
+
+        console.log(selectedProduct)
     }
 
     return (
@@ -145,9 +148,9 @@ const ProdutoPage: React.FC<Props> = () => {
                             <Typography sx={valorRealStyleDinheiro}>{product.valor}  </Typography>
                         </Grid>
                     </Grid>
-                    <Grid>
+                    <Link to={`/produto/${product.id}/ingredientes`} style={{ textDecoration: 'none', color:'var(--letrasColor)' }}>
                         <RetanguloBox sx={addStyle} handle={handleAddCart}>Adicionar</RetanguloBox>
-                    </Grid>
+                    </Link>
                 </Box>
             </Box>
         </Box>

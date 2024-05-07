@@ -5,6 +5,7 @@ import ProdutoPage from './Pages/ProdutoPage'
 import NameLogo from './components/NameLogo/NameLogo'
 import { ProductContext, ProductProvider } from './contextApi/ProductContext'
 import { useContext, useEffect } from 'react'
+import IngredientePage from './Pages/IngredientePage'
 
 function AppRoutes() {
 
@@ -25,6 +26,7 @@ function AppRoutes() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/produto/:id" element={<ProdutoPage/>} />
+          <Route path="/produto/:id/ingredientes" element={<IngredientePage/>} />
         </Routes>
       </BrowserRouter>
 

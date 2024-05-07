@@ -3,15 +3,19 @@ import Category from "../components/Category/Category"
 import Product from "../components/Product/Product"
 import Search from "../components/Search/Search"
 import { ProductContext } from "../contextApi/ProductContext"
+import { IProduct } from "../Interface/IProduct"
 
 const Home = () => {
 
-    const { pageBack, setPageBack, search, setSearch } = useContext(ProductContext)
+    const { pageBack, setPageBack, search, setSearch ,setSelectedProduct } = useContext(ProductContext)
 
     function handleSearch(event:any) {
         setSearch(event.target.value);
     }
 
+    function handleSelect (product: IProduct):void{
+        setSelectedProduct(product)
+    }
 
     useEffect(() => {
         const isHomePage = window.location.pathname === "/";
@@ -25,7 +29,7 @@ const Home = () => {
         <div>
             <Search search={search} setSearch={handleSearch} />
             <Category />
-            <Product />
+            <Product handleSelect={handleSelect}/>
         </div>
     )
 }
