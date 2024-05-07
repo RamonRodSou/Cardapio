@@ -1,43 +1,52 @@
-import { Box, Typography, styled } from '@mui/material'
+import { Box, TextField, Typography, styled } from '@mui/material'
 import '../../Variavel/_color.css';
 import settings from '../../assets/img/settings-sliders.png'
 import Lupa from '../../assets/img/Lupa.png'
 import RetanguloBox from '../RetanguloBox/RetanguloBox';
 
-type Props = {}
-
-const SearchBox = {
-
-    width: '70%',
-    height: 60,
-    backgroundColor: 'var(--boxColor)',
-
-
-    justifyContent: 'flex-start',
-    padding: '0 1rem'
+type Props = {
+    search:string 
+    setSearch:any
 }
 
-const Pesquisar = styled(Typography)({
-    color: 'var(--tituloNameCinza)',
-    fontSize: '1.2rem',
-    fontFamily: 'Roboto Condensed',
-    margin: '0 1rem'
+const SearchBox = styled(TextField)({
+
+    backgroundColor: 'var(--boxColor)',
+    width: '70%',
+    borderRadius: '20px',
 
 })
 
+const labelDiv = {
+    color: 'var(--tituloNameCinza)',
+    fontSize: '1.2rem',
+    fontFamily: 'Roboto Condensed',
+    display: 'flex',
+    gap: '.5rem',
+}
 
-const Search = (props: Props) => {
+const Search: React.FC<Props> = ({search, setSearch}) => {
+
+
     return (
         <Box
             display='flex'
+            alignItems='center'
+            justifyContent='space-around'
         >
-            <RetanguloBox sx={SearchBox}>
-                <img src={Lupa} alt="Lupa de Pesquisa" />
-                <Pesquisar>
-                    Pesquisar
-                </Pesquisar>
-            </RetanguloBox>
-            <RetanguloBox sx={{ width: 60, height: 60 }}>
+            <SearchBox
+                value={search}
+                onChange={setSearch}
+                 label={
+                    <div style={labelDiv}>
+                        <img src={Lupa} alt="Lupa de Pesquisa" />
+                        <Typography> Pesquise</Typography>
+                    </div>
+                }
+
+            />
+
+            <RetanguloBox sx={{ width: 60, height: 60 }} handle={() => ('')}>
                 <img src={settings} alt="Configurações para filtro" />
             </RetanguloBox>
 

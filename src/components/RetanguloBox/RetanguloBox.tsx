@@ -5,7 +5,7 @@ type Props = {
 
     children: any;
     sx?: CSSProperties;
-    handle(): any | void;
+    handle(): any | void ;
 }
 
 const Filter = styled(Box)({

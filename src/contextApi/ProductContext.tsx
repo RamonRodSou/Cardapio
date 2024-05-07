@@ -12,7 +12,10 @@ interface ProductContextType {
     setTemperatura: React.Dispatch<React.SetStateAction<number>>;
     count: number;
     setCount: React.Dispatch<React.SetStateAction<number>>;
-    
+    search: string;
+    setSearch: React.Dispatch<React.SetStateAction<string>>;
+    filteredProduct:IProduct[];
+    setFilteredProduct:React.Dispatch<React.SetStateAction<IProduct[]>>
 }
 
 export const ProductContext = createContext<ProductContextType>({
@@ -26,6 +29,10 @@ export const ProductContext = createContext<ProductContextType>({
     setTemperatura: () => {},
     count:1,
     setCount: () => {},
+    search:'',
+    setSearch: () =>{},
+    filteredProduct:[],
+    setFilteredProduct: () =>{},
 });
 
 export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -34,12 +41,14 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
     const [product, setProduct] = useState<IProduct>({} as IProduct);
     const [temperatura, setTemperatura] = React.useState<number>(60)
     const [count, setCount] = React.useState<number>(1)
-
-
+    const [search, setSearch] = React.useState<string>('')
+    const [filteredProduct, setFilteredProduct] = useState<IProduct[]>([])
 
 
     return (
-        <ProductContext.Provider value={{ data, setData, pageBack, setPageBack, product, setProduct, temperatura, setTemperatura, count, setCount }}>
+        <ProductContext.Provider value={{ data, setData, pageBack, setPageBack, product, setProduct,
+                 temperatura, setTemperatura, count, setCount, search, setSearch, filteredProduct, setFilteredProduct}}
+        >
             {children}
         </ProductContext.Provider>
     );

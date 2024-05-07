@@ -13,6 +13,7 @@ const BackPage = () => {
 
     const handleGoBack = () => {
         window.history.back();
+    
     };
     return (
 
@@ -25,4 +26,4 @@ const BackPage = () => {
     )
 }
 
-export default BackPage
+export default BackPage 
