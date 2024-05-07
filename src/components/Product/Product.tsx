@@ -1,6 +1,6 @@
 import { Box, Typography, styled } from '@mui/material';
 import RetanguloBox from '../RetanguloBox/RetanguloBox';
-import React, { CSSProperties, useContext, useEffect, useState } from 'react';
+import React, { CSSProperties, useContext, useEffect } from 'react';
 import { getProduct } from '../../server/get'
 import IconsTag from '../IconsTag/IconsTag';
 
@@ -39,12 +39,20 @@ const ImgProduto = styled('img')({
 const Product: React.FC<Props> = () => {
 
 
-  const { data, setData, setTemperatura, setCount } = useContext(ProductContext)
+  const { data, setData, setTemperatura, setCount, search, isSearch, setPageBack } = useContext(ProductContext)
 
+  const filter = data.filter((prod: IProduct) =>
+    removeAccents(prod.name.toLowerCase()).includes(removeAccents(search.toLowerCase()))
+  )
+
+  function removeAccents  (str: string) {
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
 
   function handleSelect(product: IProduct) {
     console.log(product)
   }
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,7 +60,7 @@ const Product: React.FC<Props> = () => {
       setData(response)
       setTemperatura(60)
       setCount(1)
-
+      setPageBack(false)
     };
     fetchData()
 
@@ -65,41 +73,75 @@ const Product: React.FC<Props> = () => {
       margin='1rem 0'
       flexWrap='wrap'
     >
+      {
+        isSearch
+          ?
+          filter.map((product) => (
+            <RetanguloBox sx={containerBurguer} key={product.id} handle={() => handleSelect(product)}>
+              <Link to={`/produto/${product.id}`} style={{ textDecoration: 'none', width: '100%' }}>
 
-      {data
-        .map((product) => (
-          <RetanguloBox sx={containerBurguer} key={product.id} handle={() => handleSelect(product)}>
-            <Link to={`/produto/${product.id}`} style={{ textDecoration: 'none', width: '100%' }}>
-
-              <ImgProduto src={product.image} alt={product.image} />
-              <Box>
-                <TituloProduto>
-                  {product.tipo}
-                </TituloProduto>
-                <Typography variant='body1' sx={{ color: 'var(--tituloHamburguer)', margin: '0 1rem' }}>
-                  {product.name}
-                </Typography>
-              </Box>
-              <Box
-                display='flex'
-                gap='3rem'
-                alignItems='center'
-                margin='.5rem 1rem'
-              >
+                <ImgProduto src={product.image} alt={product.image} />
+                <Box>
+                  <TituloProduto>
+                    {product.tipo}
+                  </TituloProduto>
+                  <Typography variant='body1' sx={{ color: 'var(--tituloHamburguer)', margin: '0 1rem' }}>
+                    {product.name}
+                  </Typography>
+                </Box>
                 <Box
                   display='flex'
-                  gap='.5rem'
+                  gap='3rem'
+                  alignItems='center'
+                  margin='.5rem 1rem'
                 >
-                  <IconsTag isStar={true} />
-                  <Typography variant='body1' sx={{ color: 'var(--tituloHamburguer)' }}>{product.valor}</Typography>
+                  <Box
+                    display='flex'
+                    gap='.5rem'
+                  >
+                    <IconsTag isStar={true} />
+                    <Typography variant='body1' sx={{ color: 'var(--tituloHamburguer)' }}>{product.valor}</Typography>
+                  </Box>
+                  <IconsTag isStar={false} />
                 </Box>
-                <IconsTag isStar={false} />
-              </Box>
-            </Link>
+              </Link>
+            </RetanguloBox>
+          ))
+          :
+          data
+            .map((product) => (
+              <RetanguloBox sx={containerBurguer} key={product.id} handle={() => handleSelect(product)}>
+                <Link to={`/produto/${product.id}`} style={{ textDecoration: 'none', width: '100%' }}>
 
-          </RetanguloBox>
+                  <ImgProduto src={product.image} alt={product.image} />
+                  <Box>
+                    <TituloProduto>
+                      {product.tipo}
+                    </TituloProduto>
+                    <Typography variant='body1' sx={{ color: 'var(--tituloHamburguer)', margin: '0 1rem' }}>
+                      {product.name}
+                    </Typography>
+                  </Box>
+                  <Box
+                    display='flex'
+                    gap='3rem'
+                    alignItems='center'
+                    margin='.5rem 1rem'
+                  >
+                    <Box
+                      display='flex'
+                      gap='.5rem'
+                    >
+                      <IconsTag isStar={true} />
+                      <Typography variant='body1' sx={{ color: 'var(--tituloHamburguer)' }}>{product.valor}</Typography>
+                    </Box>
+                    <IconsTag isStar={false} />
+                  </Box>
+                </Link>
 
-        ))}
+              </RetanguloBox>
+            ))
+      }
 
     </Box>
   )

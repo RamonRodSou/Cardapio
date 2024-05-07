@@ -6,16 +6,16 @@ interface ProductContextType {
     setData: React.Dispatch<React.SetStateAction<IProduct[]>>
     pageBack: boolean
     setPageBack: React.Dispatch<React.SetStateAction<boolean>>
-    product: IProduct;
-    setProduct: React.Dispatch<React.SetStateAction<IProduct>>;
-    temperatura: number;
-    setTemperatura: React.Dispatch<React.SetStateAction<number>>;
-    count: number;
-    setCount: React.Dispatch<React.SetStateAction<number>>;
+    product: IProduct
+    setProduct: React.Dispatch<React.SetStateAction<IProduct>>
+    temperatura: number
+    setTemperatura: React.Dispatch<React.SetStateAction<number>>
+    count: number
+    setCount: React.Dispatch<React.SetStateAction<number>>
     search: string;
-    setSearch: React.Dispatch<React.SetStateAction<string>>;
-    filteredProduct:IProduct[];
-    setFilteredProduct:React.Dispatch<React.SetStateAction<IProduct[]>>
+    setSearch: React.Dispatch<React.SetStateAction<string>>
+    isSearch: boolean
+    setIsSearch: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const ProductContext = createContext<ProductContextType>({
@@ -31,8 +31,8 @@ export const ProductContext = createContext<ProductContextType>({
     setCount: () => {},
     search:'',
     setSearch: () =>{},
-    filteredProduct:[],
-    setFilteredProduct: () =>{},
+    isSearch: true,
+    setIsSearch:() => {},
 });
 
 export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -42,12 +42,13 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
     const [temperatura, setTemperatura] = React.useState<number>(60)
     const [count, setCount] = React.useState<number>(1)
     const [search, setSearch] = React.useState<string>('')
-    const [filteredProduct, setFilteredProduct] = useState<IProduct[]>([])
+    const [isSearch, setIsSearch] = useState<boolean>(true)
+
 
 
     return (
         <ProductContext.Provider value={{ data, setData, pageBack, setPageBack, product, setProduct,
-                 temperatura, setTemperatura, count, setCount, search, setSearch, filteredProduct, setFilteredProduct}}
+                 temperatura, setTemperatura, count, setCount, search, setSearch, isSearch, setIsSearch}}
         >
             {children}
         </ProductContext.Provider>
