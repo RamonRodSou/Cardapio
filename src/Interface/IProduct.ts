@@ -18,4 +18,5 @@ export interface IIngredientes {
     nome: string, 
     valor: string,
     image: string
+    quantidade:number
 }

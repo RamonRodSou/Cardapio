@@ -3,16 +3,19 @@
     {
       "id": 1,
       "tipo": "Hamburguer",
-      "name": "Lá ele",
+      "name": "XTudo",
       "image":"https://folhadomate.com/wp-content/uploads/2022/09/hamburguer-artesanal.jpg",
       "valor":"30,49",
       "star": 4.9,
       "time": 10,
       "ingredientes": [
-        {"id":1,"nome": "Bacon", "quantidade": "1", "valor": "3,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478912754454649/bacon.webp?ex=663bcb8c&is=663a7a0c&hm=7314d6d998bc4e3fd2ab5163506c73ba2f757bed85146b8f4ae569c0bc4bd293&"},
-        {"id":2,"nome": "Cebola", "quantidade": "1", "valor": "2,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478913177817289/cebola.webp?ex=663bcb8c&is=663a7a0c&hm=6914e9ab65910ec52a6d216127f63416f67aa6674d7727cc0c28dda6c0413c43&"},
-        {"id":3,"nome": "Queijo", "quantidade": "1", "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237481605921247242/Queijo.webp?ex=663bce0e&is=663a7c8e&hm=bb7e6e16f7c6a2eceecb0e8a24a18988496b3e4df4bf0a8619dd201bc6b87d0c&"}
-      ],
+        {"id":1,"nome": "Bacon", "quantidade": 0, "valor": "3,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478912754454649/bacon.webp?ex=663bcb8c&is=663a7a0c&hm=7314d6d998bc4e3fd2ab5163506c73ba2f757bed85146b8f4ae569c0bc4bd293&"},
+        {"id":2,"nome": "Cebola", "quantidade": 0, "valor": "2,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478913177817289/cebola.webp?ex=663bcb8c&is=663a7a0c&hm=6914e9ab65910ec52a6d216127f63416f67aa6674d7727cc0c28dda6c0413c43&"},
+        {"id":3,"nome": "Queijo", "quantidade": 0, "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237481605921247242/Queijo.webp?ex=663bce0e&is=663a7c8e&hm=bb7e6e16f7c6a2eceecb0e8a24a18988496b3e4df4bf0a8619dd201bc6b87d0c&"},
+        {"id":4,"nome": "Batata S", "quantidade": 0, "valor": "10,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237573499674038383/batataEspecial.webp?ex=663c23a3&is=663ad223&hm=bf5d5f08ad4cc4dbae9c5f7312426b81fec9086a50a7f430e3ed549d57368571&"},
+        {"id":5,"nome": "Onion", "quantidade": 0, "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237577629989736498/onion_1.webp?ex=663c277c&is=663ad5fc&hm=272c230cbf912b319fde168d82583f74014bdd064917d4f83ad058bfdebeb1c6&"},
+        {"id":6,"nome": "Carne", "quantidade": 0, "valor": "5,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237581719008448592/carne2.webp?ex=663c2b4a&is=663ad9ca&hm=0e7af9e76b69964df2a31f5ee657cdaeb231148f623aa3c4e8071b32c321bb55&"}
+      ],    
       "temperatura": 60,
       "count": 1,
       "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco. Carne ao ponto, maionese caseira absurda! Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
@@ -20,19 +23,22 @@
     {
       "id": 2,
       "tipo": "HotDog",
-      "name": "Cachorrão",
+      "name": "Lá ele 1000x",
       "image":"https://www.thetacoguycatering.com/wp-content/uploads/2017/01/baconhotdogsnew1_srcset-large-768x576.jpg",
       "valor":"30,49",
       "star": 4.9,
       "time": 10,
       "ingredientes": [
-        {"id":1,"nome": "Bacon", "quantidade": "1", "valor": "3,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478912754454649/bacon.webp?ex=663bcb8c&is=663a7a0c&hm=7314d6d998bc4e3fd2ab5163506c73ba2f757bed85146b8f4ae569c0bc4bd293&"},
-        {"id":2,"nome": "Cebola", "quantidade": "1", "valor": "2,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478913177817289/cebola.webp?ex=663bcb8c&is=663a7a0c&hm=6914e9ab65910ec52a6d216127f63416f67aa6674d7727cc0c28dda6c0413c43&"},
-        {"id":3,"nome": "Queijo", "quantidade": "1", "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237481605921247242/Queijo.webp?ex=663bce0e&is=663a7c8e&hm=bb7e6e16f7c6a2eceecb0e8a24a18988496b3e4df4bf0a8619dd201bc6b87d0c&"}
-      ],     
+        {"id":1,"nome": "Bacon", "quantidade": 0, "valor": "3,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478912754454649/bacon.webp?ex=663bcb8c&is=663a7a0c&hm=7314d6d998bc4e3fd2ab5163506c73ba2f757bed85146b8f4ae569c0bc4bd293&"},
+        {"id":2,"nome": "Cebola", "quantidade": 0, "valor": "2,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478913177817289/cebola.webp?ex=663bcb8c&is=663a7a0c&hm=6914e9ab65910ec52a6d216127f63416f67aa6674d7727cc0c28dda6c0413c43&"},
+        {"id":3,"nome": "Queijo", "quantidade": 0, "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237481605921247242/Queijo.webp?ex=663bce0e&is=663a7c8e&hm=bb7e6e16f7c6a2eceecb0e8a24a18988496b3e4df4bf0a8619dd201bc6b87d0c&"},
+        {"id":4,"nome": "Batata S", "quantidade": 0, "valor": "10,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237573499674038383/batataEspecial.webp?ex=663c23a3&is=663ad223&hm=bf5d5f08ad4cc4dbae9c5f7312426b81fec9086a50a7f430e3ed549d57368571&"},
+        {"id":5,"nome": "Onion", "quantidade": 0, "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237577629989736498/onion_1.webp?ex=663c277c&is=663ad5fc&hm=272c230cbf912b319fde168d82583f74014bdd064917d4f83ad058bfdebeb1c6&"},
+        {"id":6,"nome": "Linguiça", "quantidade": 0, "valor": "5,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237586277696536637/lingu.webp?ex=663c2f89&is=663ade09&hm=857fea6577c0a5acfb3faa76c74920d73a1de1d6e9cc2808e8d2e473234def81&"}
+      ],      
       "temperatura": 60,
       "count": 1,
-      "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco. Carne ao ponto, maionese caseira absurda! Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
+      "descricao": "Esse é o cachorro quente artesanal clássico para quem gosta de saborear uma linguiça de sucolosa com bacon suculento e fresco. Linguiça ao ponto, maionese caseira absurda! Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
     },
     {
       "id": 3,
@@ -43,10 +49,13 @@
       "star": 4.9,
       "time": 10,
       "ingredientes": [
-        {"id":1,"nome": "Bacon", "quantidade": "1", "valor": "3,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478912754454649/bacon.webp?ex=663bcb8c&is=663a7a0c&hm=7314d6d998bc4e3fd2ab5163506c73ba2f757bed85146b8f4ae569c0bc4bd293&"},
-        {"id":2,"nome": "Cebola", "quantidade": "1", "valor": "2,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478913177817289/cebola.webp?ex=663bcb8c&is=663a7a0c&hm=6914e9ab65910ec52a6d216127f63416f67aa6674d7727cc0c28dda6c0413c43&"},
-        {"id":3,"nome": "Queijo", "quantidade": "1", "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237481605921247242/Queijo.webp?ex=663bce0e&is=663a7c8e&hm=bb7e6e16f7c6a2eceecb0e8a24a18988496b3e4df4bf0a8619dd201bc6b87d0c&"}
-      ],    
+        {"id":1,"nome": "Bacon", "quantidade": 0, "valor": "3,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478912754454649/bacon.webp?ex=663bcb8c&is=663a7a0c&hm=7314d6d998bc4e3fd2ab5163506c73ba2f757bed85146b8f4ae569c0bc4bd293&"},
+        {"id":2,"nome": "Cebola", "quantidade": 0, "valor": "2,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478913177817289/cebola.webp?ex=663bcb8c&is=663a7a0c&hm=6914e9ab65910ec52a6d216127f63416f67aa6674d7727cc0c28dda6c0413c43&"},
+        {"id":3,"nome": "Queijo", "quantidade": 0, "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237481605921247242/Queijo.webp?ex=663bce0e&is=663a7c8e&hm=bb7e6e16f7c6a2eceecb0e8a24a18988496b3e4df4bf0a8619dd201bc6b87d0c&"},
+        {"id":4,"nome": "Batata S", "quantidade": 0, "valor": "10,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237573499674038383/batataEspecial.webp?ex=663c23a3&is=663ad223&hm=bf5d5f08ad4cc4dbae9c5f7312426b81fec9086a50a7f430e3ed549d57368571&"},
+        {"id":5,"nome": "Onion", "quantidade": 0, "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237577629989736498/onion_1.webp?ex=663c277c&is=663ad5fc&hm=272c230cbf912b319fde168d82583f74014bdd064917d4f83ad058bfdebeb1c6&"},
+        {"id":6,"nome": "Carne", "quantidade": 0, "valor": "5,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237581719008448592/carne2.webp?ex=663c2b4a&is=663ad9ca&hm=0e7af9e76b69964df2a31f5ee657cdaeb231148f623aa3c4e8071b32c321bb55&"}
+      ],     
       "temperatura": 60,
       "count": 1,
       "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco. Carne ao ponto, maionese caseira absurda! Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
@@ -60,9 +69,12 @@
       "star": 4.9,
       "time": 10,
       "ingredientes": [
-        {"id":1,"nome": "Bacon", "quantidade": "1", "valor": "3,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478912754454649/bacon.webp?ex=663bcb8c&is=663a7a0c&hm=7314d6d998bc4e3fd2ab5163506c73ba2f757bed85146b8f4ae569c0bc4bd293&"},
-        {"id":2,"nome": "Cebola", "quantidade": "1", "valor": "2,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478913177817289/cebola.webp?ex=663bcb8c&is=663a7a0c&hm=6914e9ab65910ec52a6d216127f63416f67aa6674d7727cc0c28dda6c0413c43&"},
-        {"id":3,"nome": "Queijo", "quantidade": "1", "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237481605921247242/Queijo.webp?ex=663bce0e&is=663a7c8e&hm=bb7e6e16f7c6a2eceecb0e8a24a18988496b3e4df4bf0a8619dd201bc6b87d0c&"}
+        {"id":1,"nome": "Bacon", "quantidade": 0, "valor": "3,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478912754454649/bacon.webp?ex=663bcb8c&is=663a7a0c&hm=7314d6d998bc4e3fd2ab5163506c73ba2f757bed85146b8f4ae569c0bc4bd293&"},
+        {"id":2,"nome": "Cebola", "quantidade": 0, "valor": "2,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478913177817289/cebola.webp?ex=663bcb8c&is=663a7a0c&hm=6914e9ab65910ec52a6d216127f63416f67aa6674d7727cc0c28dda6c0413c43&"},
+        {"id":3,"nome": "Queijo", "quantidade": 0, "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237481605921247242/Queijo.webp?ex=663bce0e&is=663a7c8e&hm=bb7e6e16f7c6a2eceecb0e8a24a18988496b3e4df4bf0a8619dd201bc6b87d0c&"},
+        {"id":4,"nome": "Batata S", "quantidade": 0, "valor": "10,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237573499674038383/batataEspecial.webp?ex=663c23a3&is=663ad223&hm=bf5d5f08ad4cc4dbae9c5f7312426b81fec9086a50a7f430e3ed549d57368571&"},
+        {"id":5,"nome": "Onion", "quantidade": 0, "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237577629989736498/onion_1.webp?ex=663c277c&is=663ad5fc&hm=272c230cbf912b319fde168d82583f74014bdd064917d4f83ad058bfdebeb1c6&"},
+        {"id":6,"nome": "Carne", "quantidade": 0, "valor": "5,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237581719008448592/carne2.webp?ex=663c2b4a&is=663ad9ca&hm=0e7af9e76b69964df2a31f5ee657cdaeb231148f623aa3c4e8071b32c321bb55&"}
       ],          
       "temperatura": 60,
       "count": 1,

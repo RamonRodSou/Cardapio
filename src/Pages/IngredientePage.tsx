@@ -1,6 +1,8 @@
-import { useContext } from 'react';
-import { Box, Grid, Typography, styled } from '@mui/material';
-import iconAdd from '../assets/img/iconAdd.png';
+import { useContext } from 'react'
+import { Box, Grid, Typography, styled } from '@mui/material'
+import ilustracaoHamburguer from '../assets/img/burguer.webp'
+import ilustracaoCachorro from '../assets/img/hot.webp'
+import iconAdd from '../assets/img/iconAdd.png'
 import { ProductContext } from '../contextApi/ProductContext'
 import { IIngredientes } from '../Interface/IProduct'
 
@@ -19,8 +21,12 @@ const Ingrediente = styled(Box)({
   borderRadius: '10px',
   width: '90px',
 })
+const ImgIlustracao = styled('img')({
 
-const ImgAdd = styled('img')({})
+  height: '230px',
+  borderRadius: '20px'
+})
+
 
 const ImgIngrediente = styled('img')({
   borderRadius: '10px 10px 15px 15px',
@@ -28,25 +34,43 @@ const ImgIngrediente = styled('img')({
   height: '73px'
 })
 
+const ImgAdd = styled('img')({})
+
+
 const IngredientePage = () => {
   const { selectedProduct } = useContext(ProductContext)
-  const ingredientes: IIngredientes[] = selectedProduct.ingredientes || ([] as IIngredientes[]);
+  const ingredientes: IIngredientes[] = selectedProduct.ingredientes || ([] as IIngredientes[])
+
+
+  const hamburgueres = selectedProduct.tipo
 
   return (
     <Container>
+      {hamburgueres == "Hamburguer" ? (
+        <ImgIlustracao src={ilustracaoHamburguer} alt='Hamburguer Ilustração' />
+      )
+        : (
+          <ImgIlustracao src={ilustracaoCachorro} alt='Cachorro Ilustração' />
+        )}
+
       <Box display={'flex'} justifyContent={'space-around'} alignItems={'center'} gap={1} flexWrap={'wrap'}>
         {ingredientes.map((ingrediente: IIngredientes) => (
           <Ingrediente key={ingrediente.id}>
             <Grid display={'flex'} justifyContent={'center'}>
+              <Box>
+                <Typography variant='body1' sx={{ color: 'var(--letrasColor)', position: 'absolute', padding:'2px 5px', backgroundColor:'var(--quantidadeIngrediente) ', borderRadius:'30px'}}>
+                  {ingrediente.quantidade}
+                </Typography>
+              </Box>              
               <ImgIngrediente src={ingrediente.image} alt={ingrediente.nome} width={'80px'} />
-            </Grid>
+            </Grid> 
             <Box display={'flex'} justifyContent={'space-around'} alignItems={'end'} width={'100%'} margin={0.4}>
               <Grid display={'flex'} flexDirection={'column'}>
                 <Typography variant='caption' sx={{ color: 'var(--letrasColor)' }}>
                   {ingrediente.nome}
                 </Typography>
                 <Typography variant='caption' sx={{ color: 'var(--letrasColor)' }}>
-                  {ingrediente.valor}
+                  R$ {ingrediente.valor}
                 </Typography>
               </Grid>
               <Grid onClick={() => console.log('Adicionar ' + ingrediente.nome)} sx={{ cursor: 'pointer' }}>
