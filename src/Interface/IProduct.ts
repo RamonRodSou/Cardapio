@@ -13,10 +13,24 @@ export interface IProduct {
     descricao: string
 }
 
-export interface IIngredientes {
+// export interface IIngredientes {
+//     id: string,
+//     nome: string, 
+//     valor: string,
+//     image: string
+//     quantidade:number
+// }
+
+
+
+export interface IIngredientes extends IIngredientesQuantidade {
     id: string,
-    nome: string, 
     valor: string,
     image: string
+}
+
+interface IIngredientesQuantidade {
+
+    nome: string, 
     quantidade:number
 }
