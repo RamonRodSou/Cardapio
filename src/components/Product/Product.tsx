@@ -41,7 +41,7 @@ const ImgProduto = styled('img')({
 const Product: React.FC<Props> = ({handleSelect}) => {
 
 
-  const { data, setData, setTemperatura, setCount, search, isSearch, setPageBack } = useContext(ProductContext)
+  const { data, setData, setTemperatura, setCount, search, isSearch, setPageBack, setNewIngrediente } = useContext(ProductContext)
 
   const filter = data.filter((product: IProduct) =>
     removeAccents(product.name.toLowerCase()).includes(removeAccents(search.toLowerCase()))
@@ -59,6 +59,7 @@ const Product: React.FC<Props> = ({handleSelect}) => {
       setData(response)
       setTemperatura(60)
       setCount(1)
+      setNewIngrediente([])
       setPageBack(false)
     };
     fetchData()

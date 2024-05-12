@@ -57,6 +57,7 @@ const ProdutoPage: React.FC<Props> = () => {
     const { id } = useParams<string>();
     const { setPageBack,  product, setProduct, temperatura, setTemperatura, count, setCount, selectedProduct} = useContext(ProductContext)
 
+
     useEffect(() => {
         if (id) {
             const fetchProduct = async () => {
@@ -93,9 +94,7 @@ const ProdutoPage: React.FC<Props> = () => {
     function handleAddCart(): void {
 
         selectedProduct.temperatura = temperatura
-        selectedProduct.count = count 
-
-        console.log(selectedProduct)
+        selectedProduct.count = count
     }
 
     return (

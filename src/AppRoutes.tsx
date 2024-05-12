@@ -6,10 +6,11 @@ import NameLogo from './components/NameLogo/NameLogo'
 import { ProductContext, ProductProvider } from './contextApi/ProductContext'
 import { useContext, useEffect } from 'react'
 import IngredientePage from './Pages/IngredientePage'
+import Bag from './Pages/Bag'
 
 function AppRoutes() {
 
-  const { pageBack, setPageBack } = useContext(ProductContext)
+  const { setPageBack } = useContext(ProductContext)
 
   useEffect(() => {
     if (window.location.pathname === "/") {
@@ -27,6 +28,8 @@ function AppRoutes() {
           <Route path="/" element={<HomePage />} />
           <Route path="/produto/:id" element={<ProdutoPage/>} />
           <Route path="/produto/:id/ingredientes" element={<IngredientePage/>} />
+          <Route path="/produto/bag" element={<Bag/>} />
+
         </Routes>
       </BrowserRouter>
 

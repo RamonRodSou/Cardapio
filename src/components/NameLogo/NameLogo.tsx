@@ -53,10 +53,13 @@ const NameLogo = (props: Props) => {
                     gap='2rem'
                     justifyContent='space-between'
                     margin='1rem .5rem'
+                    key={item.id}
+
                 >
                     <Box
                         display='flex'
                         flexDirection='column'
+
                     >
                         <Titulo1>
                             {item.businesName1}

@@ -1,13 +1,13 @@
-import { Box } from '@mui/material'
 import logo from '../../assets/img/Logo.webp';
+import { Link } from 'react-router-dom';
 
 type Props = {}
 
 const Logo = (props: Props) => {
     return (
-        <Box>
+        <Link to={`/`} style={{ textDecoration: 'none', color: 'var(--letrasColor)' }}>
             <img src={logo} alt="Logo Resenha do Chefes" width={100} height={115} />
-        </Box>
+        </Link>
     )
 }
 

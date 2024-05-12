@@ -9,12 +9,12 @@ const BackPage = () => {
     const { pageBack } = useContext(ProductContext)
     const BackDiv = styled('div')({
         position:'absolute',
-    })
+    }) 
 
     const handleGoBack = () => {
-        window.history.back();
+        window.history.back()
     
-    };
+    }
     return (
 
         pageBack ?

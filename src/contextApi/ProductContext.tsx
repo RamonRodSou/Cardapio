@@ -1,9 +1,13 @@
 import React, { createContext, useState } from "react";
-import { IProduct } from "../Interface/IProduct";
+import { IIngredientes, IProduct } from "../Interface/IProduct";
 
 interface ProductContextType {
     data: IProduct[]
     setData: React.Dispatch<React.SetStateAction<IProduct[]>>
+    
+    newIngrediente: IIngredientes[]
+    setNewIngrediente: React.Dispatch<React.SetStateAction<IIngredientes[]>>
+
     product: IProduct
     setProduct: React.Dispatch<React.SetStateAction<IProduct>>
     selectedProduct: IProduct
@@ -27,6 +31,9 @@ interface ProductContextType {
 export const ProductContext = createContext<ProductContextType>({
     data: [],
     setData: () => {},
+    newIngrediente: [],
+    setNewIngrediente: () => {},
+
     product: {} as IProduct,
     setProduct: () => {},
     selectedProduct: {} as IProduct,
@@ -50,6 +57,8 @@ export const ProductContext = createContext<ProductContextType>({
 export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
     const [data, setData] = useState<IProduct[]>([])
+    const [newIngrediente, setNewIngrediente] = useState<IIngredientes[]>([])
+
     const [product, setProduct] = useState<IProduct>({} as IProduct)
     const [selectedProduct, setSelectedProduct] = useState<IProduct>({} as IProduct)
 
@@ -65,7 +74,9 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
     return (
         <ProductContext.Provider value={{ data, setData, pageBack, setPageBack, product, setProduct,
-                 temperatura, setTemperatura, count, setCount, search, setSearch, isSearch, setIsSearch, selectedProduct, setSelectedProduct}}
+                 temperatura, setTemperatura, count, setCount, search, setSearch, isSearch, setIsSearch, selectedProduct, setSelectedProduct,
+                 newIngrediente, setNewIngrediente
+                }}
         >
             {children}
         </ProductContext.Provider>

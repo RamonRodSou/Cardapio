@@ -1,10 +1,14 @@
-export interface IProduct {
+export interface IItem {
 
-    id: string
     image: string
-    tipo: string
     name: string
     valor: number
+}
+
+export interface IProduct extends IItem{
+
+    id: string
+    tipo: string
     star: number
     time: number
     temperatura: number
@@ -13,24 +17,9 @@ export interface IProduct {
     descricao: string
 }
 
-// export interface IIngredientes {
-//     id: string,
-//     nome: string, 
-//     valor: string,
-//     image: string
-//     quantidade:number
-// }
-
-
-
-export interface IIngredientes extends IIngredientesQuantidade {
-    id: string,
-    valor: string,
-    image: string
-}
-
-interface IIngredientesQuantidade {
-
-    nome: string, 
+export interface IIngredientes extends IItem{
+    
+    id: string
     quantidade:number
+
 }
