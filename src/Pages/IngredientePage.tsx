@@ -2,12 +2,13 @@ import { useContext, useEffect, useState } from 'react'
 import { Box, Grid, Typography, styled } from '@mui/material'
 import ilustracaoHamburguer from '../assets/img/burguer.webp'
 import ilustracaoCachorro from '../assets/img/hot.webp'
+import ilustracaoCombo from '../assets/img/combo.webp'
+import ilustracaoPizza from '../assets/img/pizza.webp'
 import iconAdd from '../assets/img/iconAdd.png'
 import iconLess from '../assets/img/iconLess.png'
 import { ProductContext } from '../contextApi/ProductContext'
 import { IIngredientes } from '../Interface/IProduct'
 import RetanguloBox from '../components/RetanguloBox/RetanguloBox'
-import { Link } from 'react-router-dom'
 // import { Link } from 'react-router-dom'
 
 const Container = styled(Box)({
@@ -60,7 +61,7 @@ const valorRealStyleDinheiro = {
 
 
 const IngredientePage = () => {
-  const { newIngrediente, setNewIngrediente, selectedProduct, count, product } = useContext(ProductContext)
+  const { newIngrediente, setNewIngrediente, selectedProduct, count } = useContext(ProductContext)
 
   const ingredientes: IIngredientes[] = selectedProduct.ingredientes || ([] as IIngredientes[])
   const [countIngredientes, setCountIngredientes] = useState<{ [key: string]: number }>({})
@@ -69,24 +70,25 @@ const IngredientePage = () => {
 
 
 
-  function moreIngrediente(ingrediente: IIngredientes): void {
+  function moreIngrediente(ingrediente: IIngredientes) {
     setCountIngredientes(prevCounts => ({
       ...prevCounts,
       [ingrediente.id]: (prevCounts[ingrediente.id] || 0) + 1,
     }))
-
+    return countIngredientes
   }
 
 
-  function lessIngrediente(ingrediente: IIngredientes): void {
+  function lessIngrediente(ingrediente: IIngredientes) {
     setCountIngredientes(prevCounts => ({
       ...prevCounts,
       [ingrediente.id]: (prevCounts[ingrediente.id] || 0) - 1,
     }))
-
+    return countIngredientes
   }
 
-  const hamburgueres = selectedProduct.tipo
+
+  const typeLanch = selectedProduct.tipo
   const valorIng = newIngrediente.reduce((total, ingrediente) => {
     const valorString = ingrediente.valor.toString()
     const valorFloat = parseFloat(valorString.replace(',', '.'))
@@ -100,7 +102,7 @@ const IngredientePage = () => {
   const totalNaTelaString = totalNatela.toString().replace('.', ',')
   const array = newIngrediente.map((e) => `${e.name} x ${e.quantidade} `)
 
-  function handleAddCart(): void {
+  function handleAddCart(): IIngredientes[] {
     const addedIngredients: IIngredientes[] = []
     for (const ingrediente of ingredientes) {
       const count = countIngredientes[ingrediente.id] || 0
@@ -117,6 +119,8 @@ const IngredientePage = () => {
 
     setNewIngrediente(addedIngredients)
     setCartUpdated(true)
+
+    return addedIngredients
   }
 
 
@@ -124,7 +128,9 @@ const IngredientePage = () => {
     if (cartUpdated) {
       setCartUpdated(false)
       setTotalCompra(total)
-      console.log('Tipo: ' + selectedProduct.tipo + '\nLanche: ' + selectedProduct.name + '\nQuantidade: ' + count + '\nAdicionar: ' + array + '\nTotal: ' + total.toFixed(2))
+      console.log(selectedProduct)
+      console.log('Tipo: ' + selectedProduct.tipo + '\nLanche: ' + selectedProduct.name + '\nQuantidade: ' 
+      + count + '\nTemperatura: ' + selectedProduct.temperatura +'\nAdicionar: ' + array + '\nTotal: ' + total.toFixed(2))
     }
   }, [newIngrediente, cartUpdated])
 
@@ -132,18 +138,25 @@ const IngredientePage = () => {
 
   return (
     <Container>
-      {hamburgueres == "Hamburguer" ? (
+      {typeLanch == "Hamburguer" ? (
         <ImgIlustracao src={ilustracaoHamburguer} alt='Hamburguer Ilustração' />
-      )
-        : (
+      ) :
+        typeLanch == "HotDog" ? (
           <ImgIlustracao src={ilustracaoCachorro} alt='Cachorro Ilustração' />
-        )}
+        ) :
+          typeLanch == "Pizza" ? (
+            <ImgIlustracao src={ilustracaoPizza} alt='Cachorro Ilustração' />
+          ) :
+          (
+            <ImgIlustracao src={ilustracaoCombo} alt='Cachorro Ilustração' />
+          )
+      }
 
       <Box display={'flex'} justifyContent={'space-around'} alignItems={'center'} gap={1} flexWrap={'wrap'}>
         {count > 1 ?
           (
-            <Typography variant='body1' sx={{ color: 'var(--letrasColor)', margin:'1rem' }}>
-               Estará adicionando os ingredientes para todos os produtos.
+            <Typography variant='body1' sx={{ color: 'var(--letrasColor)', margin: '1rem' }}>
+              Estará adicionando os ingredientes para todos os produtos.
             </Typography>
           ) :
           <>

@@ -3,11 +3,9 @@ import '../../Variavel/_color.css';
 import iconInstagram from '../../assets/img/icon-instagran.svg'
 import Logo from '../Logo/Logo';
 import React, { useEffect } from 'react';
-import { IProfissional } from '../../Interface/IProfissional';
+import { IProfessional } from '../../Interface/IProfessional';
 import { AdmAPIGet } from '../../server/AdmAPI';
 import BackPage from '../BackPage/BackPage';
-
-type Props = {}
 
 const Titulo1 = styled(Typography)({
 
@@ -31,9 +29,9 @@ const Titulo2 = styled(Typography)({
 })
 
 
-const NameLogo = (props: Props) => {
+const NameLogo = () => {
 
-    const [dataProfissional, setDataProfissional] = React.useState<IProfissional[]>([])
+    const [dataProfissional, setDataProfissional] = React.useState<IProfessional[]>([])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -62,10 +60,10 @@ const NameLogo = (props: Props) => {
 
                     >
                         <Titulo1>
-                            {item.businesName1}
+                            {item.businessName1}
                         </Titulo1>
                         <Titulo2>
-                            {item.businesName2}
+                            {item.businessName2}
                         </Titulo2>
                         <Typography variant="body1" fontSize='.7rem' margin='-.5rem 0 0 0' textTransform='uppercase'>
                             {item.info}
@@ -78,7 +76,7 @@ const NameLogo = (props: Props) => {
                         >
                             <img src={iconInstagram} alt="Logo Resenha do Chefes" />
                             <Link
-                                href={item.instragramLink}
+                                href={item.instagramLink}
                                 underline="none"
                                 color="var(--titulo-color)"
                             >

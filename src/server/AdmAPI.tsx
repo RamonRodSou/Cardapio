@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const url: string = 'http://localhost:3000/profissional'
+const url: string = 'http://localhost:3000/professional'
 
 export async function AdmAPIGet() {
     try {

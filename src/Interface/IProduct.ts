@@ -23,3 +23,8 @@ export interface IIngredientes extends IItem{
     quantidade:number
 
 }
+
+
+export interface IngredientCount {
+    [key: string]: number;
+  }

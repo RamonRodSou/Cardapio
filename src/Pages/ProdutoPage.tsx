@@ -55,20 +55,7 @@ const addStyle = {
 const ProdutoPage: React.FC<Props> = () => {
 
     const { id } = useParams<string>();
-    const { setPageBack,  product, setProduct, temperatura, setTemperatura, count, setCount, selectedProduct} = useContext(ProductContext)
-
-
-    useEffect(() => {
-        if (id) {
-            const fetchProduct = async () => {
-                const data = await getProductById(id);
-                setProduct(data);
-            };
-            fetchProduct();
-        }
-        setPageBack(true)
-
-    }, [id, setPageBack]);
+    const { setPageBack, product, setProduct, temperatura, setTemperatura, count, setCount, selectedProduct } = useContext(ProductContext)
 
     if (!product) {
         return <div>Carregando...</div>;
@@ -97,6 +84,17 @@ const ProdutoPage: React.FC<Props> = () => {
         selectedProduct.count = count
     }
 
+    useEffect(() => {
+        if (id) {
+            const fetchProduct = async () => {
+                const data = await getProductById(id);
+                setProduct(data);
+            };
+            fetchProduct();
+        }
+        setPageBack(true)
+
+    }, [id, setPageBack]);
     return (
         <Box>
             <Box key={product.id} display={'flex'} flexDirection={'column'} justifyContent={'space-between'}>
@@ -147,7 +145,7 @@ const ProdutoPage: React.FC<Props> = () => {
                             <Typography sx={valorRealStyleDinheiro}>{product.valor}  </Typography>
                         </Grid>
                     </Grid>
-                    <Link to={`/produto/${product.id}/ingredientes`} style={{ textDecoration: 'none', color:'var(--letrasColor)' }}>
+                    <Link to={`/produto/${product.id}/ingredientes`} style={{ textDecoration: 'none', color: 'var(--letrasColor)' }}>
                         <RetanguloBox sx={addStyle} handle={handleAddCart}>Adicionar</RetanguloBox>
                     </Link>
                 </Box>

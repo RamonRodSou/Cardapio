@@ -18,7 +18,7 @@
       ],    
       "temperatura": 60,
       "count": 1,
-      "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco. Carne ao ponto, maionese caseira absurda! Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
+      "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco.Carne ao ponto, maionese caseira absurda!Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
     },
     {
       "id": 2,
@@ -38,7 +38,7 @@
       ],      
       "temperatura": 60,
       "count": 1,
-      "descricao": "Esse é o cachorro quente artesanal clássico para quem gosta de saborear uma linguiça de sucolosa com bacon suculento e fresco. Linguiça ao ponto, maionese caseira absurda! Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
+      "descricao": "Esse é o cachorro quente artesanal clássico para quem gosta de saborear uma linguiça de sucolosa com bacon suculento e fresco. Linguiça ao ponto, maionese caseira absurda!Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
     },
     {
       "id": 3,
@@ -58,7 +58,7 @@
       ],     
       "temperatura": 60,
       "count": 1,
-      "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco. Carne ao ponto, maionese caseira absurda! Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
+      "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco.Carne ao ponto, maionese caseira absurda!Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
     },
     {
       "id": 4,
@@ -78,22 +78,22 @@
       ],          
       "temperatura": 60,
       "count": 1,
-      "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco. Carne ao ponto, maionese caseira absurda! Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
+      "descricao": "Esse é o hambúrguer artesanal clássico para quem gosta de saborear um blend de carne moída com bacon suculento e fresco.Carne ao ponto, maionese caseira absurda!Queijo cheddar e fatias finas e crocantes de bacon. Pão brioche macio e amanteigado tostado na chapa"
     }
   ],
-  "profissional": [
+  "professional": [
     {
       "id": 1,
-      "fistName": "Ramon",
+      "firstName": "Ramon",
       "lastName": "Rodrigues",
       "email": "ramon@rodsoudev.com",
       "password":"123456",
       "telephone": 21972923210,
       "location": "rua a",
       "instagram":"@rodsoudev",
-      "instragramLink":"https://www.instagram.com/ramonrodsoul/",
-      "businesName1": "Esquina",
-      "businesName2": "Da carne",
+      "instagramLink":"https://www.instagram.com/ramonrodsoul/",
+      "businessName1": "Esquina",
+      "businessName2": "Da carne",
       "info":"Do tamanho da sua fome",
       "image":"https://www.instagram.com/resenhaduchef/"
     }
