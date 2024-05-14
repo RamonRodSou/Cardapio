@@ -2,7 +2,7 @@ import Star from '../../assets/img/star.png'
 import Heart from '../../assets/img/heart.png'
 
 type Props = {
-  isStar: boolean;
+  isStar: boolean
 }
 
 const IconsTag = (props: Props) => {

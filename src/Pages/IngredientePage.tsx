@@ -153,8 +153,7 @@ const IngredientePage = () => {
       }
 
       <Box display={'flex'} justifyContent={'space-around'} alignItems={'center'} gap={1} flexWrap={'wrap'}>
-        {count > 1 ?
-          (
+        {count > 1 ? (
             <Typography variant='body1' sx={{ color: 'var(--letrasColor)', margin: '1rem' }}>
               Estará adicionando os ingredientes para todos os produtos.
             </Typography>

@@ -10,7 +10,7 @@ const Home = () => {
     const { pageBack, setPageBack, search, setSearch ,setSelectedProduct } = useContext(ProductContext)
 
     function handleSearch(event:any) {
-        setSearch(event.target.value);
+        setSearch(event.target.value)
     }
 
     function handleSelect (product: IProduct):void{
@@ -19,9 +19,7 @@ const Home = () => {
 
     useEffect(() => {
         const isHomePage = window.location.pathname === "/";
-        if (isHomePage) {
-            setPageBack(!pageBack);
-        }
+        isHomePage ? setPageBack(!pageBack) : console.log('Já está na página home')
 
     }, [setPageBack])
 

@@ -1,16 +1,14 @@
-import { Box, Tab, Tabs, Typography } from '@mui/material'
+import { Tabs, Typography } from '@mui/material'
 import RetanguloBox from '../RetanguloBox/RetanguloBox'
-import * as React from 'react';
-type Props = {}
+import * as React from 'react'
 
+type Props = {}
 
 const BoxStyleSelected = {
     padding: '1rem',
-
 }
 
 const BoxStyle = {
-
     padding: '1rem',
     backgroundColor: 'var(--boxColor )',
     color: 'var(--tituloNameCinza)'
@@ -18,7 +16,7 @@ const BoxStyle = {
 
 const Category = (props: Props) => {
 
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = React.useState(0)
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);

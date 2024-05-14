@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { View, TextInput, StyleSheet, TouchableOpacity, Text } from 'react-native'
 import { cssColors } from '../../Variavel/Css'
-import { ProductContext } from '../../contexts/product'
+import ProductContext from '../../contextApi/ProductContext'
 
 const SearchBar = ({ searchTerm, searchSet }) => {
 
-    const { isSearchVisible, setIsSearchVisible, setSearchTerm } = useContext(ProductContext)
+    const { setIsSearchVisible, setSearchTerm } = useContext(ProductContext)
     
     const  handleClose = () => {
         setIsSearchVisible(false)

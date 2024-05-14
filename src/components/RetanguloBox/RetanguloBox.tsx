@@ -3,9 +3,9 @@ import {CSSProperties } from 'react'
 
 type Props = {
 
-    children: any;
-    sx?: CSSProperties;
-    handle(): any | void ;
+    children: any
+    sx?: CSSProperties
+    handle(): any | void 
 }
 
 const Filter = styled(Box)({

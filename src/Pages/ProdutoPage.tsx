@@ -54,27 +54,24 @@ const addStyle = {
 
 const ProdutoPage: React.FC<Props> = () => {
 
-    const { id } = useParams<string>();
+    const { id } = useParams<string>()
     const { setPageBack, product, setProduct, temperatura, setTemperatura, count, setCount, selectedProduct } = useContext(ProductContext)
 
     if (!product) {
-        return <div>Carregando...</div>;
+        return <div>Carregando...</div>
     }
 
     function handleTemperaturaChange(novaTemperatura: number) {
-        setTemperatura(novaTemperatura);
-    };
+        setTemperatura(novaTemperatura)
+    }
 
     function handleMore(): number {
-        if (count >= 1) setCount(count + 1)
+        (count >= 1) ? setCount(count + 1) : console.log('Não há mais unidades disponíveis')
         return count
     }
+
     function handleLess(): number {
-        if (count <= 1) {
-            alert("1 é a quantidade mínina de produtos")
-        } else {
-            setCount(count - 1)
-        }
+        (count <= 1) ? alert("1 é a quantidade mínina de produtos") : setCount(count - 1)
         return count
     }
 
@@ -87,14 +84,14 @@ const ProdutoPage: React.FC<Props> = () => {
     useEffect(() => {
         if (id) {
             const fetchProduct = async () => {
-                const data = await getProductById(id);
-                setProduct(data);
-            };
-            fetchProduct();
+                const data = await getProductById(id)
+                setProduct(data)
+            }
+            fetchProduct()
         }
         setPageBack(true)
 
-    }, [id, setPageBack]);
+    }, [id, setPageBack])
     return (
         <Box>
             <Box key={product.id} display={'flex'} flexDirection={'column'} justifyContent={'space-between'}>
