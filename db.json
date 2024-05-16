@@ -9,12 +9,12 @@
       "star": 4.9,
       "time": 10,
       "ingredientes": [
-        {"id":1,"name": "Bacon", "quantidade": 0, "valor": "3,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478912754454649/bacon.webp?ex=6641ba4c&is=664068cc&hm=2a8180ee51414d61107cef58a7aa67d354a7201f66869040f4972134525a1c7e&"},
-        {"id":2,"name": "Cebola", "quantidade": 0, "valor": "2,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478913177817289/cebola.webp?ex=6641ba4c&is=664068cc&hm=3eab2b093b9877e7288b78f8dab0aa086e18b8bf4a85ee8983defa76ce43556b&"},
-        {"id":3,"name": "Queijo", "quantidade": 0, "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237481605921247242/Queijo.webp?ex=6641bcce&is=66406b4e&hm=df7d04cbb8477357428691baf0b695d12ba6a1facb3b0cce5014c12f66059f7e&"},
-        {"id":4,"name": "Batata S", "quantidade": 0, "valor": "10,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237573499674038383/batataEspecial.webp?ex=66421263&is=6640c0e3&hm=91e1d7ed3c5992f1304036026909b27daffda6d8e16b30126a1df76a2ad12645&"},
-        {"id":5,"name": "Onion", "quantidade": 0, "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237575814334251038/onion.webp?ex=6642148b&is=6640c30b&hm=1e56aa0fa9c7245c1f4082afe8b18baf55de14d7b2e945e255017cee4402eaff&"},
-        {"id":6,"name": "Carne", "quantidade": 0, "valor": "5,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237581719008448592/carne2.webp?ex=66421a0a&is=6640c88a&hm=0cb26b151b44bbc9ef5458322d1a52ca29ed25c3575606afba0de3fa98697e9c&"}
+        {"id":1,"name": "Bacon", "quantidade": 0, "valor": "3,00", "image": "https://mega.nz/file/FEpHBRYQ#8zqq7sWSGJC_67ClSK5JVJt-G9cL0UiXJ4Gc2SeD0Hs"},
+        {"id":2,"name": "Cebola", "quantidade": 0, "valor": "2,00", "image": "https://mega.nz/file/INpE2B6S#viho9vixpx9uzcvrrqFXsko2RYAbhkdabP6nvLmsMVo"},
+        {"id":3,"name": "Queijo", "quantidade": 0, "valor": "2,00","image": "https://mega.nz/file/FFBxgTxb#PzwJUr1VpZwsDfeS3Z6ea36rFxsNpD9DpMZoYC01_ww"},
+        {"id":4,"name": "Batata S", "quantidade": 0, "valor": "10,00","image": "https://mega.nz/file/lExiQZRI#KnMaMTfMnathrhX_Ja7zAPeC5gnKrZmkNEsGjc3yiJc"},
+        {"id":5,"name": "Onion", "quantidade": 0, "valor": "2,00","image": "https://mega.nz/file/NVgCAaLS#F81tqxVYx18gH-ckiS0FYIi1O2xVKv7cjX1ZlYzM96M"},
+        {"id":6,"name": "Carne", "quantidade": 0, "valor": "5,00","image": "https://mega.nz/file/oEBhVIpQ#YuA-F3I3l-gOHEcUImWoshsga0Dd2Fq5fvBlYpWhlqY"}
       ],    
       "temperatura": 60,
       "count": 1,
@@ -29,12 +29,12 @@
       "star": 4.9,
       "time": 10,
       "ingredientes": [
-        {"id":1,"name": "Bacon", "quantidade": 0, "valor": "3,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478912754454649/bacon.webp?ex=6641ba4c&is=664068cc&hm=2a8180ee51414d61107cef58a7aa67d354a7201f66869040f4972134525a1c7e&"},
-        {"id":2,"name": "Cebola", "quantidade": 0, "valor": "2,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478913177817289/cebola.webp?ex=6641ba4c&is=664068cc&hm=3eab2b093b9877e7288b78f8dab0aa086e18b8bf4a85ee8983defa76ce43556b&"},
-        {"id":3,"name": "Queijo", "quantidade": 0, "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237481605921247242/Queijo.webp?ex=6641bcce&is=66406b4e&hm=df7d04cbb8477357428691baf0b695d12ba6a1facb3b0cce5014c12f66059f7e&"},
-        {"id":4,"name": "Batata S", "quantidade": 0, "valor": "10,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237573499674038383/batataEspecial.webp?ex=66421263&is=6640c0e3&hm=91e1d7ed3c5992f1304036026909b27daffda6d8e16b30126a1df76a2ad12645&"},
-        {"id":5,"name": "Onion", "quantidade": 0, "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237575814334251038/onion.webp?ex=6642148b&is=6640c30b&hm=1e56aa0fa9c7245c1f4082afe8b18baf55de14d7b2e945e255017cee4402eaff&"},
-        {"id":6,"name": "Linguiça", "quantidade": 0, "valor": "5,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237586277696536637/lingu.webp?ex=66421e49&is=6640ccc9&hm=ccd19523c107de2659d2c5c3c21fe932b3421c14a7bd77337bef988ef6d6e294&"}
+        {"id":1,"name": "Bacon", "quantidade": 0, "valor": "3,00", "image": "https://mega.nz/file/FEpHBRYQ#8zqq7sWSGJC_67ClSK5JVJt-G9cL0UiXJ4Gc2SeD0Hs"},
+        {"id":2,"name": "Cebola", "quantidade": 0, "valor": "2,00", "image": "https://mega.nz/file/INpE2B6S#viho9vixpx9uzcvrrqFXsko2RYAbhkdabP6nvLmsMVo"},
+        {"id":3,"name": "Queijo", "quantidade": 0, "valor": "2,00","image": "https://mega.nz/file/FFBxgTxb#PzwJUr1VpZwsDfeS3Z6ea36rFxsNpD9DpMZoYC01_ww"},
+        {"id":4,"name": "Batata S", "quantidade": 0, "valor": "10,00","image": "https://mega.nz/file/lExiQZRI#KnMaMTfMnathrhX_Ja7zAPeC5gnKrZmkNEsGjc3yiJc"},
+        {"id":5,"name": "Onion", "quantidade": 0, "valor": "2,00","image": "https://mega.nz/file/NVgCAaLS#F81tqxVYx18gH-ckiS0FYIi1O2xVKv7cjX1ZlYzM96M"},
+        {"id":6,"name": "Linguiça", "quantidade": 0, "valor": "5,00","image": "https://mega.nz/file/AEpgmYgL#wu9fcDbJQItKt_dZhDsFxBXWhpMAVSF8qHX2hfUSuTo"}
       ],      
       "temperatura": 60,
       "count": 1,
@@ -49,12 +49,12 @@
       "star": 4.9,
       "time": 10,
       "ingredientes": [
-        {"id":1,"name": "Bacon", "quantidade": 0, "valor": "3,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478912754454649/bacon.webp?ex=6641ba4c&is=664068cc&hm=2a8180ee51414d61107cef58a7aa67d354a7201f66869040f4972134525a1c7e&"},
-        {"id":2,"name": "Cebola", "quantidade": 0, "valor": "2,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478913177817289/cebola.webp?ex=6641ba4c&is=664068cc&hm=3eab2b093b9877e7288b78f8dab0aa086e18b8bf4a85ee8983defa76ce43556b&"},
-        {"id":3,"name": "Queijo", "quantidade": 0, "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237481605921247242/Queijo.webp?ex=6641bcce&is=66406b4e&hm=df7d04cbb8477357428691baf0b695d12ba6a1facb3b0cce5014c12f66059f7e&"},
-        {"id":4,"name": "Batata S", "quantidade": 0, "valor": "10,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237573499674038383/batataEspecial.webp?ex=66421263&is=6640c0e3&hm=91e1d7ed3c5992f1304036026909b27daffda6d8e16b30126a1df76a2ad12645&"},
-        {"id":5,"name": "Onion", "quantidade": 0, "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237575814334251038/onion.webp?ex=6642148b&is=6640c30b&hm=1e56aa0fa9c7245c1f4082afe8b18baf55de14d7b2e945e255017cee4402eaff&"},
-        {"id":6,"name": "Carne", "quantidade": 0, "valor": "5,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237581719008448592/carne2.webp?ex=66421a0a&is=6640c88a&hm=0cb26b151b44bbc9ef5458322d1a52ca29ed25c3575606afba0de3fa98697e9c&"}
+        {"id":1,"name": "Bacon", "quantidade": 0, "valor": "3,00", "image": "https://mega.nz/file/FEpHBRYQ#8zqq7sWSGJC_67ClSK5JVJt-G9cL0UiXJ4Gc2SeD0Hs"},
+        {"id":2,"name": "Cebola", "quantidade": 0, "valor": "2,00", "image": "https://mega.nz/file/INpE2B6S#viho9vixpx9uzcvrrqFXsko2RYAbhkdabP6nvLmsMVo"},
+        {"id":3,"name": "Queijo", "quantidade": 0, "valor": "2,00","image": "https://mega.nz/file/FFBxgTxb#PzwJUr1VpZwsDfeS3Z6ea36rFxsNpD9DpMZoYC01_ww"},
+        {"id":4,"name": "Batata S", "quantidade": 0, "valor": "10,00","image": "https://mega.nz/file/lExiQZRI#KnMaMTfMnathrhX_Ja7zAPeC5gnKrZmkNEsGjc3yiJc"},
+        {"id":5,"name": "Onion", "quantidade": 0, "valor": "2,00","image": "https://mega.nz/file/NVgCAaLS#F81tqxVYx18gH-ckiS0FYIi1O2xVKv7cjX1ZlYzM96M"},
+        {"id":6,"name": "Carne", "quantidade": 0, "valor": "5,00","image": "https://mega.nz/file/oEBhVIpQ#YuA-F3I3l-gOHEcUImWoshsga0Dd2Fq5fvBlYpWhlqY"}
       ],     
       "temperatura": 60,
       "count": 1,
@@ -69,12 +69,12 @@
       "star": 4.9,
       "time": 10,
       "ingredientes": [
-        {"id":1,"name": "Bacon", "quantidade": 0, "valor": "3,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478912754454649/bacon.webp?ex=6641ba4c&is=664068cc&hm=2a8180ee51414d61107cef58a7aa67d354a7201f66869040f4972134525a1c7e&"},
-        {"id":2,"name": "Cebola", "quantidade": 0, "valor": "2,00", "image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237478913177817289/cebola.webp?ex=6641ba4c&is=664068cc&hm=3eab2b093b9877e7288b78f8dab0aa086e18b8bf4a85ee8983defa76ce43556b&"},
-        {"id":3,"name": "Queijo", "quantidade": 0, "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237481605921247242/Queijo.webp?ex=6641bcce&is=66406b4e&hm=df7d04cbb8477357428691baf0b695d12ba6a1facb3b0cce5014c12f66059f7e&"},
-        {"id":4,"name": "Batata S", "quantidade": 0, "valor": "10,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237573499674038383/batataEspecial.webp?ex=66421263&is=6640c0e3&hm=91e1d7ed3c5992f1304036026909b27daffda6d8e16b30126a1df76a2ad12645&"},
-        {"id":5,"name": "Onion", "quantidade": 0, "valor": "2,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237575814334251038/onion.webp?ex=6642148b&is=6640c30b&hm=1e56aa0fa9c7245c1f4082afe8b18baf55de14d7b2e945e255017cee4402eaff&"},
-        {"id":6,"name": "Carne", "quantidade": 0, "valor": "5,00","image": "https://cdn.discordapp.com/attachments/1078331260377776219/1237581719008448592/carne2.webp?ex=66421a0a&is=6640c88a&hm=0cb26b151b44bbc9ef5458322d1a52ca29ed25c3575606afba0de3fa98697e9c&"}
+        {"id":1,"name": "Bacon", "quantidade": 0, "valor": "3,00", "image": "https://mega.nz/file/FEpHBRYQ#8zqq7sWSGJC_67ClSK5JVJt-G9cL0UiXJ4Gc2SeD0Hs"},
+        {"id":2,"name": "Cebola", "quantidade": 0, "valor": "2,00", "image": "https://mega.nz/file/INpE2B6S#viho9vixpx9uzcvrrqFXsko2RYAbhkdabP6nvLmsMVo"},
+        {"id":3,"name": "Queijo", "quantidade": 0, "valor": "2,00","image": "https://mega.nz/file/FFBxgTxb#PzwJUr1VpZwsDfeS3Z6ea36rFxsNpD9DpMZoYC01_ww"},
+        {"id":4,"name": "Batata S", "quantidade": 0, "valor": "10,00","image": "https://mega.nz/file/lExiQZRI#KnMaMTfMnathrhX_Ja7zAPeC5gnKrZmkNEsGjc3yiJc"},
+        {"id":5,"name": "Onion", "quantidade": 0, "valor": "2,00","image": "https://mega.nz/file/NVgCAaLS#F81tqxVYx18gH-ckiS0FYIi1O2xVKv7cjX1ZlYzM96M"},
+        {"id":6,"name": "Carne", "quantidade": 0, "valor": "5,00","image": "https://mega.nz/file/oEBhVIpQ#YuA-F3I3l-gOHEcUImWoshsga0Dd2Fq5fvBlYpWhlqY"}
       ],          
       "temperatura": 60,
       "count": 1,
