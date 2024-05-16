@@ -9,7 +9,7 @@ import iconLess from '../assets/img/iconLess.png'
 import { ProductContext } from '../contextApi/ProductContext'
 import { IIngredientes } from '../Interface/IProduct'
 import RetanguloBox from '../components/RetanguloBox/RetanguloBox'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Container = styled(Box)({
   display: 'flex',
@@ -61,12 +61,11 @@ const valorRealStyleDinheiro = {
 
 
 const IngredientePage = () => {
-  const { newIngrediente, setNewIngrediente, selectedProduct, count } = useContext(ProductContext)
+  const { newIngrediente, setNewIngrediente, selectedProduct, count, setTotalCompra} = useContext(ProductContext)
 
   const ingredientes: IIngredientes[] = selectedProduct.ingredientes || ([] as IIngredientes[])
   const [countIngredientes, setCountIngredientes] = useState<{ [key: string]: number }>({})
   const [cartUpdated, setCartUpdated] = useState<boolean>(false)
-  const [totalCompra, setTotalCompra] = useState<number>()
 
 
 
@@ -129,8 +128,8 @@ const IngredientePage = () => {
       setCartUpdated(false)
       setTotalCompra(total)
       console.log(selectedProduct)
-      console.log('Tipo: ' + selectedProduct.tipo + '\nLanche: ' + selectedProduct.name + '\nQuantidade: ' 
-      + count + '\nTemperatura: ' + selectedProduct.temperatura +'\nAdicionar: ' + array + '\nTotal: ' + total.toFixed(2))
+      console.log('Tipo: ' + selectedProduct.tipo + '\nLanche: ' + selectedProduct.name + '\nQuantidade: '
+        + count + '\nTemperatura: ' + selectedProduct.temperatura + '\nAdicionar: ' + array + '\nTotal: ' + total.toFixed(2))
     }
   }, [newIngrediente, cartUpdated])
 
@@ -147,17 +146,17 @@ const IngredientePage = () => {
           typeLanch == "Pizza" ? (
             <ImgIlustracao src={ilustracaoPizza} alt='Cachorro Ilustração' />
           ) :
-          (
-            <ImgIlustracao src={ilustracaoCombo} alt='Cachorro Ilustração' />
-          )
+            (
+              <ImgIlustracao src={ilustracaoCombo} alt='Cachorro Ilustração' />
+            )
       }
 
       <Box display={'flex'} justifyContent={'space-around'} alignItems={'center'} gap={1} flexWrap={'wrap'}>
         {count > 1 ? (
-            <Typography variant='body1' sx={{ color: 'var(--letrasColor)', margin: '1rem' }}>
-              Estará adicionando os ingredientes para todos os produtos.
-            </Typography>
-          ) :
+          <Typography variant='body1' sx={{ color: 'var(--letrasColor)', margin: '1rem' }}>
+            Estará adicionando os ingredientes para todos os produtos.
+          </Typography>
+        ) :
           <>
           </>
         }
@@ -206,9 +205,9 @@ const IngredientePage = () => {
             <Typography sx={valorRealStyleDinheiro}>{totalNaTelaString}</Typography>
           </Grid>
         </Grid>
-        {/* <Link to={`/produto/bag`} style={{ textDecoration: 'none', color: 'var(--letrasColor)' }}> */}
-        <RetanguloBox sx={addStyle} handle={handleAddCart}>Adicionar</RetanguloBox>
-        {/* </Link> */}
+        <Link to={`/produto/bag`} style={{ textDecoration: 'none', color: 'var(--letrasColor)' }}>
+          <RetanguloBox sx={addStyle} handle={handleAddCart}>Adicionar</RetanguloBox>
+        </Link>
       </Box>
     </Container>
   )
