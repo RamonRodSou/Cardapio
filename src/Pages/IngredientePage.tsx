@@ -87,19 +87,21 @@ const IngredientePage = () => {
   }
 
 
-  const typeLanch = selectedProduct.tipo
+  
   const valorIng = newIngrediente.reduce((total, ingrediente) => {
     const valorString = ingrediente.valor.toString()
     const valorFloat = parseFloat(valorString.replace(',', '.'))
     return total + valorFloat * count
   }, 0)
+  const array = newIngrediente.map((e) => `${e.name} x ${e.quantidade} `)
 
+  const typeLanch = selectedProduct.tipo
+  
   const produto = parseFloat(selectedProduct.valor.toString().replace(',', '.'))
   const total = produto * count + valorIng
-
   const totalNatela = (produto * count).toFixed(2)
   const totalNaTelaString = totalNatela.toString().replace('.', ',')
-  const array = newIngrediente.map((e) => `${e.name} x ${e.quantidade} `)
+
 
   function handleAddCart(): IIngredientes[] {
     const addedIngredients: IIngredientes[] = []
