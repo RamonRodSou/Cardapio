@@ -1,6 +1,7 @@
 import axios from "axios"
 
-const url: string = 'http://localhost:3000/produto'
+// const url: string = 'http://localhost:3000/produto'
+const url:string = 'https://my-json-server.typicode.com/RamonRodSou/cardapio/produto'
 
 export async function getProduct() {
     try {
