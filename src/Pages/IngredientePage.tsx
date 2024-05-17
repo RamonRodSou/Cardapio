@@ -4,8 +4,8 @@ import ilustracaoHamburguer from '../assets/img/burguer.webp'
 import ilustracaoCachorro from '../assets/img/hot.webp'
 import ilustracaoCombo from '../assets/img/combo.webp'
 import ilustracaoPizza from '../assets/img/pizza.webp'
-import iconAdd from '../assets/img/iconAdd.png'
-import iconLess from '../assets/img/iconLess.png'
+import iconAdd from '../assets/img/iconAdd.webp'
+import iconLess from '../assets/img/iconLess.webp'
 import { ProductContext } from '../contextApi/ProductContext'
 import { IIngredientes } from '../Interface/IProduct'
 import RetanguloBox from '../components/RetanguloBox/RetanguloBox'
@@ -24,7 +24,7 @@ const Ingrediente = styled(Box)({
   alignItems: 'center',
   backgroundColor: 'var(--containerIngrediente)',
   borderRadius: '10px',
-  width: '90px',
+  width: '100px',
 })
 const ImgIlustracao = styled('img')({
 
@@ -35,8 +35,8 @@ const ImgIlustracao = styled('img')({
 
 const ImgIngrediente = styled('img')({
   borderRadius: '10px 10px 15px 15px',
-  width: '90px',
-  height: '73px'
+  width: '100px',
+  height: '80px'
 })
 
 const ImgAdd = styled('img')({})
@@ -61,7 +61,7 @@ const valorRealStyleDinheiro = {
 
 
 const IngredientePage = () => {
-  const { newIngrediente, setNewIngrediente, selectedProduct, count, setTotalCompra} = useContext(ProductContext)
+  const { newIngrediente, setNewIngrediente, selectedProduct, count, setTotalCompra } = useContext(ProductContext)
 
   const ingredientes: IIngredientes[] = selectedProduct.ingredientes || ([] as IIngredientes[])
   const [countIngredientes, setCountIngredientes] = useState<{ [key: string]: number }>({})
@@ -87,7 +87,7 @@ const IngredientePage = () => {
   }
 
 
-  
+
   const valorIng = newIngrediente.reduce((total, ingrediente) => {
     const valorString = ingrediente.valor.toString()
     const valorFloat = parseFloat(valorString.replace(',', '.'))
@@ -96,7 +96,7 @@ const IngredientePage = () => {
   const array = newIngrediente.map((e) => `${e.name} x ${e.quantidade} `)
 
   const typeLanch = selectedProduct.tipo
-  
+
   const produto = parseFloat(selectedProduct.valor.toString().replace(',', '.'))
   const total = produto * count + valorIng
   const totalNatela = (produto * count).toFixed(2)
@@ -166,13 +166,13 @@ const IngredientePage = () => {
           <Ingrediente key={ingrediente.id}>
             <Grid display={'flex'} justifyContent={'center'}>
               <Box>
-                <Typography variant='body1' sx={{ color: 'var(--letrasColor)', position: 'absolute', padding: '2px 5px', backgroundColor: 'var(--quantidadeIngrediente) ', borderRadius: '30px' }}>
+                <Typography variant='body1' sx={{ color: 'var(--letrasColor)', position: 'absolute', margin: '-4px',padding: '2px 5px',   backgroundColor: 'var(--containerIngrediente)', borderRadius: '6px' }}>
                   {countIngredientes[ingrediente.id] || 0}
                 </Typography>
               </Box>
               <ImgIngrediente src={ingrediente.image} alt={ingrediente.name} width={'80px'} />
             </Grid>
-            <Box display={'flex'} justifyContent={'space-around'} alignItems={'end'} width={'100%'} margin={0.4}>
+            <Box display={'flex'} flexDirection={'row'}  justifyContent={'space-around'} alignItems={'center'} width={'100%'} margin={0.4}>
               <Grid display={'flex'} flexDirection={'column'}>
                 <Typography variant='caption' sx={{ color: 'var(--letrasColor)' }}>
                   {ingrediente.name}
@@ -183,19 +183,16 @@ const IngredientePage = () => {
                   R$ {ingrediente.valor}
                 </Typography>
               </Grid>
-              <Box>
+              <Box >
+              <Grid onClick={() => (moreIngrediente(ingrediente))} sx={{ cursor: 'pointer' }}>
+                <ImgAdd src={iconAdd} alt='Botão adicionar produto' width={25} />
+              </Grid>
 
-                <Grid onClick={() => (moreIngrediente(ingrediente))} sx={{ cursor: 'pointer' }}>
-                  <ImgAdd src={iconAdd} alt='Botão adicionar produto' />
-                </Grid>
-
-                <Grid onClick={() => (lessIngrediente(ingrediente))} sx={{ cursor: 'pointer' }}>
-                  <ImgAdd src={iconLess} alt='Botão adicionar produto' />
-                </Grid>
-              </Box>
-
+              <Grid onClick={() => (lessIngrediente(ingrediente))} sx={{ cursor: 'pointer' }}>
+                <ImgAdd src={iconLess} alt='Botão adicionar produto' width={25}/>
+              </Grid>
             </Box>
-
+            </Box>
           </Ingrediente>
         ))}
       </Box>
@@ -211,7 +208,7 @@ const IngredientePage = () => {
           <RetanguloBox sx={addStyle} handle={handleAddCart}>Adicionar</RetanguloBox>
         </Link>
       </Box>
-    </Container>
+    </Container >
   )
 }
 
