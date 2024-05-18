@@ -29,11 +29,8 @@ function AppRoutes() {
           <Route path="/produto/:id" element={<ProdutoPage/>} />
           <Route path="/produto/:id/ingredientes" element={<IngredientePage/>} />
           <Route path="/produto/bag" element={<Bag/>} />
-
         </Routes>
       </BrowserRouter>
-
-
     </ProductProvider>
 
   )

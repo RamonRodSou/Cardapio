@@ -18,6 +18,8 @@ interface ProductContextType {
     setPageBack: React.Dispatch<React.SetStateAction<boolean>>
     isSearch: boolean
     setIsSearch: React.Dispatch<React.SetStateAction<boolean>>
+    allProduct: boolean
+    setAllProduct: React.Dispatch<React.SetStateAction<boolean>>
 
     temperatura: number
     setTemperatura: React.Dispatch<React.SetStateAction<number>>
@@ -46,6 +48,8 @@ export const ProductContext = createContext<ProductContextType>({
     setPageBack:() => {},
     isSearch: true,
     setIsSearch:() => {},
+    allProduct: true,
+    setAllProduct:() => {},
 
     temperatura:0,
     setTemperatura: () => {},
@@ -70,6 +74,8 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
     const [pageBack, setPageBack] = useState<boolean>(true)
     const [isSearch, setIsSearch] = useState<boolean>(true)
+    const [allProduct, setAllProduct] = useState<boolean>(true)
+
 
     const [temperatura, setTemperatura] = React.useState<number>(60)
     const [count, setCount] = React.useState<number>(1)
@@ -83,7 +89,7 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
     return (
         <ProductContext.Provider value={{ data, setData, pageBack, setPageBack, product, setProduct,
                  temperatura, setTemperatura, count, setCount, search, setSearch, isSearch, setIsSearch, selectedProduct, setSelectedProduct,
-                 newIngrediente, setNewIngrediente, totalCompra, setTotalCompra
+                 newIngrediente, setNewIngrediente, totalCompra, setTotalCompra, allProduct ,setAllProduct
                 }}
         >
             {children}

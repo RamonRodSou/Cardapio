@@ -3,7 +3,6 @@ import RetanguloBox from '../RetanguloBox/RetanguloBox'
 import { useContext } from "react"
 import * as React from 'react'
 import { ProductContext } from '../../contextApi/ProductContext'
-import { getProduct } from '../../server/get'
 
 type Props = {}
 
@@ -12,8 +11,10 @@ const BoxStyleSelected = {
 }
 
 const Category = (props: Props) => {
-    const { data, setSearch } = useContext(ProductContext)
+    const { data, setSearch, setAllProduct, allProduct } = useContext(ProductContext)
     const [value, setValue] = React.useState(0)
+
+    const [selectedIndex, setSelectedIndex] = React.useState(-1)
 
     const category = Array.from(new Set(data.map(e => e.tipo)))
 
@@ -22,8 +23,15 @@ const Category = (props: Props) => {
     }
 
     function handle(index: any) {
-        console.log(category[index])
         setSearch(category[index])
+        setAllProduct(false)
+        setSelectedIndex(index)
+    }
+
+    function handleAll() {
+        setSearch('')
+        setAllProduct(true)
+        setSelectedIndex(-1)
     }
 
     return (
@@ -32,9 +40,23 @@ const Category = (props: Props) => {
             onChange={handleChange}
             variant="scrollable"
             scrollButtons="auto"
+            sx={{ '& .MuiTabs-indicator': { display: 'none' } }}
+
         >
+            <RetanguloBox
+                sx={{ ...BoxStyleSelected, backgroundColor: allProduct ? 'red' : 'green'}}
+                handle={handleAll}
+            >
+                <Typography>
+                    Todos
+                </Typography>
+            </RetanguloBox>
             {category.map((tipo, index) => (
-                <RetanguloBox sx={BoxStyleSelected} handle={() => handle(index)} key={index}>
+                <RetanguloBox
+                    sx={{ ...BoxStyleSelected, backgroundColor: !allProduct && selectedIndex === index ? 'red' : 'green'}}
+                    handle={() => handle(index)}
+                    key={index}
+                >
                     <Typography>
                         {tipo}
                     </Typography>

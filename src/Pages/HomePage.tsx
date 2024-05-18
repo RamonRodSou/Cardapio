@@ -7,9 +7,9 @@ import Product from "../Class/Product"
 
 const Home = () => {
 
-    const { pageBack, setPageBack, search, setSearch ,setSelectedProduct } = useContext(ProductContext)
+    const { pageBack, setPageBack, setSearch ,setSelectedProduct } = useContext(ProductContext)
 
-    function handleSearch(event:any) {
+    function handleSearch(event:any):void {
         setSearch(event.target.value)
     }
 
@@ -22,10 +22,10 @@ const Home = () => {
         isHomePage ? setPageBack(!pageBack) : console.log('Já está na página home')
 
     }, [setPageBack])
-
+ 
     return (
         <div>
-            <Search search={search} setSearch={handleSearch} />
+            <Search  setSearch={handleSearch} />
             <Category />
             <ProductContainer handleSelect={handleSelect}/>
         </div>

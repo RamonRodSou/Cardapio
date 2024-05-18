@@ -6,7 +6,6 @@ import Lupa from '../../assets/img/Lupa.png'
 // import settings from '../../assets/img/settings-sliders.png'
 
 type Props = {
-    search:string 
     setSearch:any
 }
 
@@ -26,7 +25,7 @@ const labelDiv = {
     gap: '.5rem',
 }
 
-const Search: React.FC<Props> = ({search, setSearch}) => {
+const Search: React.FC<Props> = ({ setSearch}) => {
 
 
     return (
@@ -36,7 +35,6 @@ const Search: React.FC<Props> = ({search, setSearch}) => {
             justifyContent='space-around'
         >
             <SearchBox
-                value={search}
                 onChange={setSearch}
                  label={
                     <div style={labelDiv}>

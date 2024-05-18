@@ -1,5 +1,5 @@
 import { Box, Grid, Typography, styled } from '@mui/material'
-import React, { useContext, useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { ProductContext } from '../contextApi/ProductContext'
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2'
 
@@ -17,26 +17,11 @@ const TypeItem = styled(Typography)({
 
 })
 
-
-
 const TituloProduto = styled(Typography)({
 
   fontFamily: 'Roboto Condensed',
   color: 'var(--tituloProdutoNome)',
   fontSize: '1.8rem',
-  fontWeight: 'inherit',
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '1rem'
-
-})
-
-const TituloProdutoPrincipal = styled(Typography)({
-
-  fontFamily: 'Roboto Condensed',
-  color: 'var(--titulo-color)',
-  textAlign: 'center',
-  fontSize: '2.5rem',
   fontWeight: 'inherit',
   display: 'flex',
   flexDirection: 'column',
@@ -151,10 +136,4 @@ const Bag = (props: Props) => {
     </Box>
   )
 }
-
-
-
-//       console.log('Tipo: ' + selectedProduct.tipo + '\nLanche: ' + selectedProduct.name + '\nQuantidade: '
-//  + count + '\nTemperatura: ' + selectedProduct.temperatura + '\nAdicionar: ' + array + '\nTotal: ' + total.toFixed(2))
-
 export default Bag
