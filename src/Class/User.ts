@@ -1,18 +1,18 @@
-import { IProfessional  } from "../Interface/IProfessional"
+import IUser from "../Interface/IUser"
 
-class User implements IProfessional  {
+export default class User implements IUser  {
     id: string
     firstName: string
     lastName: string
     email: string
     telephone: number
     location: string
-    instagramLink: string
+    instagramLink?: string
     instagram: string
     businessName1: string
-    businessName2: string
+    businessName2?: string
     info: string
-    private password: string | number
+    private _password: string | number
 
     constructor(
         id: string,
@@ -32,7 +32,7 @@ class User implements IProfessional  {
         this.firstName = firstName
         this.lastName = lastName
         this.email = email
-        this.password = password
+        this._password = password
         this.telephone = telephone
         this.location = location
         this.instagramLink = instagramLink
@@ -42,7 +42,11 @@ class User implements IProfessional  {
         this.info = info
     }
 
-    getPassword(): string | number {
-        return this.password
+    get Password(): string | number {
+        return this._password
+    }
+
+    set password(newPassword: string | number) {
+        this._password = newPassword
     }
 }

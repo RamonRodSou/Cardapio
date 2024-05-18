@@ -3,9 +3,9 @@ import '../../Variavel/_color.css';
 import iconInstagram from '../../assets/img/icon-instagran.svg'
 import Logo from '../Logo/Logo';
 import React, { useEffect } from 'react';
-import { IProfessional } from '../../Interface/IProfessional';
 import { AdmAPIGet } from '../../server/AdmAPI';
 import BackPage from '../BackPage/BackPage';
+import User from '../../Class/User';
 
 const Titulo1 = styled(Typography)({
 
@@ -31,12 +31,13 @@ const Titulo2 = styled(Typography)({
 
 const NameLogo = () => {
 
-    const [dataProfissional, setDataProfissional] = React.useState<IProfessional[]>([])
+    const [user, setUser] = React.useState<User[]>([])
+    console.log(user)
 
     useEffect(() => {
         const fetchData = async () => {
             const data = await AdmAPIGet()
-            setDataProfissional(data)
+            setUser(data)
         }
         fetchData();
     }, [])
@@ -44,7 +45,7 @@ const NameLogo = () => {
     return (
         <div>
             <BackPage />
-            {dataProfissional.map((item) => (
+            {user.map((item) => (
                 <Box
                     display='flex'
                     flexDirection='row'

@@ -40,13 +40,3 @@ function AppRoutes() {
 }
 
 export default AppRoutes
-
-
-
-
-{/* <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/produto/:id" element={<ProdutoPage />} />
-        </Routes>
-      </BrowserRouter> */}

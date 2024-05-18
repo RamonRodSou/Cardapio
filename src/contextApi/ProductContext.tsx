@@ -1,17 +1,18 @@
 import React, { createContext, useState } from "react";
-import { IIngredientes, IProduct } from "../Interface/IProduct";
+import Product from "../Class/Product";
+import Ingredientes from "../Class/Ingredientes";
 
 interface ProductContextType {
-    data: IProduct[]
-    setData: React.Dispatch<React.SetStateAction<IProduct[]>>
+    data: Product[]
+    setData: React.Dispatch<React.SetStateAction<Product[]>>
     
-    newIngrediente: IIngredientes[]
-    setNewIngrediente: React.Dispatch<React.SetStateAction<IIngredientes[]>>
+    newIngrediente: Ingredientes[]
+    setNewIngrediente: React.Dispatch<React.SetStateAction<Ingredientes[]>>
 
-    product: IProduct
-    setProduct: React.Dispatch<React.SetStateAction<IProduct>>
-    selectedProduct: IProduct
-    setSelectedProduct: React.Dispatch<React.SetStateAction<IProduct>>
+    product: Product
+    setProduct: React.Dispatch<React.SetStateAction<Product>>
+    selectedProduct: Product
+    setSelectedProduct: React.Dispatch<React.SetStateAction<Product>>
 
     pageBack: boolean
     setPageBack: React.Dispatch<React.SetStateAction<boolean>>
@@ -36,9 +37,9 @@ export const ProductContext = createContext<ProductContextType>({
     newIngrediente: [],
     setNewIngrediente: () => {},
 
-    product: {} as IProduct,
+    product: {} as Product,
     setProduct: () => {},
-    selectedProduct: {} as IProduct,
+    selectedProduct: {} as Product,
     setSelectedProduct: () => {},
 
     pageBack: true,
@@ -61,11 +62,11 @@ export const ProductContext = createContext<ProductContextType>({
 
 export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
-    const [data, setData] = useState<IProduct[]>([])
-    const [newIngrediente, setNewIngrediente] = useState<IIngredientes[]>([])
+    const [data, setData] = useState<Product[]>([])
+    const [newIngrediente, setNewIngrediente] = useState<Ingredientes[]>([])
 
-    const [product, setProduct] = useState<IProduct>({} as IProduct)
-    const [selectedProduct, setSelectedProduct] = useState<IProduct>({} as IProduct)
+    const [product, setProduct] = useState<Product>({} as Product)
+    const [selectedProduct, setSelectedProduct] = useState<Product>({} as Product)
 
     const [pageBack, setPageBack] = useState<boolean>(true)
     const [isSearch, setIsSearch] = useState<boolean>(true)

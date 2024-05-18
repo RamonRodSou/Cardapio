@@ -1,9 +1,5 @@
-export interface IItem {
-
-    image: string
-    name: string
-    valor: number
-}
+import Ingredientes from "../Class/Ingredientes"
+import IItem from "./IItem"
 
 export interface IProduct extends IItem{
 
@@ -13,18 +9,7 @@ export interface IProduct extends IItem{
     time: number
     temperatura: number
     count: number
-    ingredientes:IIngredientes[]
+    ingredientes:Ingredientes[]
     descricao: string
 }
 
-export interface IIngredientes extends IItem{
-    
-    id: string
-    quantidade:number
-
-}
-
-
-export interface IngredientCount {
-    [key: string]: number;
-  }

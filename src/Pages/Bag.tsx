@@ -69,7 +69,7 @@ const Bag = (props: Props) => {
     const valorFloat = parseFloat(valorString.replace(',', '.'))
     return total + valorFloat * count
   }, 0)
-  const array = newIngrediente.map((e) => `${e.name} x ${e.quantidade}`)
+  const array = newIngrediente.map((e) => `${e.quantidade} x ${e.name}, `)
   const produto = parseFloat(selectedProduct.valor.toString().replace(',', '.'))
   const total = produto * count + valorIng
 

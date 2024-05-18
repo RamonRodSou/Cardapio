@@ -7,9 +7,9 @@ import ilustracaoPizza from '../assets/img/pizza.webp'
 import iconAdd from '../assets/img/iconAdd.webp'
 import iconLess from '../assets/img/iconLess.webp'
 import { ProductContext } from '../contextApi/ProductContext'
-import { IIngredientes } from '../Interface/IProduct'
 import RetanguloBox from '../components/RetanguloBox/RetanguloBox'
 import { Link } from 'react-router-dom'
+import Ingredientes from '../Class/Ingredientes'
 
 const Container = styled(Box)({
   display: 'flex',
@@ -63,13 +63,13 @@ const valorRealStyleDinheiro = {
 const IngredientePage = () => {
   const { newIngrediente, setNewIngrediente, selectedProduct, count, setTotalCompra } = useContext(ProductContext)
 
-  const ingredientes: IIngredientes[] = selectedProduct.ingredientes || ([] as IIngredientes[])
+  const ingredientes: Ingredientes[] = selectedProduct.ingredientes || ([] as Ingredientes[])
   const [countIngredientes, setCountIngredientes] = useState<{ [key: string]: number }>({})
   const [cartUpdated, setCartUpdated] = useState<boolean>(false)
 
 
 
-  function moreIngrediente(ingrediente: IIngredientes) {
+  function moreIngrediente(ingrediente: Ingredientes) {
     setCountIngredientes(prevCounts => ({
       ...prevCounts,
       [ingrediente.id]: (prevCounts[ingrediente.id] || 0) + 1,
@@ -78,7 +78,7 @@ const IngredientePage = () => {
   }
 
 
-  function lessIngrediente(ingrediente: IIngredientes) {
+  function lessIngrediente(ingrediente: Ingredientes) {
     setCountIngredientes(prevCounts => ({
       ...prevCounts,
       [ingrediente.id]: (prevCounts[ingrediente.id] || 0) - 1,
@@ -103,8 +103,8 @@ const IngredientePage = () => {
   const totalNaTelaString = totalNatela.toString().replace('.', ',')
 
 
-  function handleAddCart(): IIngredientes[] {
-    const addedIngredients: IIngredientes[] = []
+  function handleAddCart(): Ingredientes[] {
+    const addedIngredients: Ingredientes[] = []
     for (const ingrediente of ingredientes) {
       const count = countIngredientes[ingrediente.id] || 0
       if (count) {
@@ -162,7 +162,7 @@ const IngredientePage = () => {
           <>
           </>
         }
-        {ingredientes.map((ingrediente: IIngredientes) => (
+        {ingredientes.map((ingrediente: Ingredientes) => (
           <Ingrediente key={ingrediente.id}>
             <Grid display={'flex'} justifyContent={'center'}>
               <Box>

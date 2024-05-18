@@ -3,13 +3,13 @@ import RetanguloBox from '../RetanguloBox/RetanguloBox';
 import React, { CSSProperties, useContext, useEffect } from 'react';
 import { getProduct } from '../../server/get'
 import IconsTag from '../IconsTag/IconsTag';
-import { IProduct } from '../../Interface/IProduct';
 import { Link } from 'react-router-dom';
 import { ProductContext } from '../../contextApi/ProductContext';
+import Product from '../../Class/Product';
 
 type Props = {
 
-  handleSelect(product: IProduct): void
+  handleSelect(product: Product): void
 }
 const containerBurguer: CSSProperties = {
 
@@ -38,12 +38,12 @@ const ImgProduto = styled('img')({
   borderRadius: '15px'
 })
 
-const Product: React.FC<Props> = ({ handleSelect }) => {
+const ProductContainer: React.FC<Props> = ({ handleSelect }) => {
 
 
   const { data, setData, setTemperatura, setCount, search, isSearch, setPageBack, setNewIngrediente } = useContext(ProductContext)
 
-  const filter = data.filter((product: IProduct) =>
+  const filter = data.filter((product: Product) =>
     removeAccents(product.name.toLowerCase()).includes(removeAccents(search.toLowerCase())) ||
     removeAccents(product.tipo.toLowerCase()).includes(removeAccents(search.toLowerCase()))
 
@@ -148,4 +148,4 @@ return (
 )
 }
 
-export default Product
+export default ProductContainer

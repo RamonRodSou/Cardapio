@@ -1,9 +1,9 @@
 import { useContext, useEffect } from "react"
 import Category from "../components/Category/Category"
-import Product from "../components/Product/Product"
+import ProductContainer from "../components/Product/Product"
 import Search from "../components/Search/Search"
 import { ProductContext } from "../contextApi/ProductContext"
-import { IProduct } from "../Interface/IProduct"
+import Product from "../Class/Product"
 
 const Home = () => {
 
@@ -13,7 +13,7 @@ const Home = () => {
         setSearch(event.target.value)
     }
 
-    function handleSelect (product: IProduct):void{
+    function handleSelect (product: Product):void{
         setSelectedProduct(product)
     }
 
@@ -27,7 +27,7 @@ const Home = () => {
         <div>
             <Search search={search} setSearch={handleSearch} />
             <Category />
-            <Product handleSelect={handleSelect}/>
+            <ProductContainer handleSelect={handleSelect}/>
         </div>
     )
 }
