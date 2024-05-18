@@ -5,9 +5,10 @@ import Ingredientes from "../Class/Ingredientes";
 interface ProductContextType {
     data: Product[]
     setData: React.Dispatch<React.SetStateAction<Product[]>>
-    
     newIngrediente: Ingredientes[]
     setNewIngrediente: React.Dispatch<React.SetStateAction<Ingredientes[]>>
+    bag: Product[]
+    setBag: React.Dispatch<React.SetStateAction<Product[]>>
 
     product: Product
     setProduct: React.Dispatch<React.SetStateAction<Product>>
@@ -30,37 +31,37 @@ interface ProductContextType {
 
     search: string;
     setSearch: React.Dispatch<React.SetStateAction<string>>
-
 }
 
 export const ProductContext = createContext<ProductContextType>({
     data: [],
-    setData: () => {},
+    setData: () => { },
     newIngrediente: [],
-    setNewIngrediente: () => {},
+    setNewIngrediente: () => { },
+    bag: [],
+    setBag: () => { },
 
     product: {} as Product,
-    setProduct: () => {},
+    setProduct: () => { },
     selectedProduct: {} as Product,
-    setSelectedProduct: () => {},
+    setSelectedProduct: () => { },
 
     pageBack: true,
-    setPageBack:() => {},
+    setPageBack: () => { },
     isSearch: true,
-    setIsSearch:() => {},
+    setIsSearch: () => { },
     allProduct: true,
-    setAllProduct:() => {},
+    setAllProduct: () => { },
 
-    temperatura:0,
-    setTemperatura: () => {},
-    count:1,
-    setCount: () => {},
-    totalCompra:1,
-    setTotalCompra: () => {},
+    temperatura: 0,
+    setTemperatura: () => { },
+    count: 1,
+    setCount: () => { },
+    totalCompra: 1,
+    setTotalCompra: () => { },
+    search: '',
+    setSearch: () => { },
 
-
-    search:'',
-    setSearch: () =>{},
 
 });
 
@@ -68,6 +69,8 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
     const [data, setData] = useState<Product[]>([])
     const [newIngrediente, setNewIngrediente] = useState<Ingredientes[]>([])
+    const [bag, setBag] = useState<Product[]>([])
+
 
     const [product, setProduct] = useState<Product>({} as Product)
     const [selectedProduct, setSelectedProduct] = useState<Product>({} as Product)
@@ -83,16 +86,19 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
 
     const [search, setSearch] = React.useState<string>('')
- 
+
+
 
 
     return (
-        <ProductContext.Provider value={{ data, setData, pageBack, setPageBack, product, setProduct,
-                 temperatura, setTemperatura, count, setCount, search, setSearch, isSearch, setIsSearch, selectedProduct, setSelectedProduct,
-                 newIngrediente, setNewIngrediente, totalCompra, setTotalCompra, allProduct ,setAllProduct
-                }}
+        <ProductContext.Provider value={{
+            data, setData, pageBack, setPageBack, product, setProduct,
+            temperatura, setTemperatura, count, setCount, search, setSearch, isSearch, setIsSearch, selectedProduct, setSelectedProduct,
+            newIngrediente, setNewIngrediente, totalCompra, setTotalCompra, allProduct, setAllProduct, bag, setBag
+        }}
         >
             {children}
         </ProductContext.Provider>
     );
 };
+  

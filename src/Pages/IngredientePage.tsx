@@ -61,7 +61,7 @@ const valorRealStyleDinheiro = {
 
 
 const IngredientePage = () => {
-  const { newIngrediente, setNewIngrediente, selectedProduct, count, setTotalCompra } = useContext(ProductContext)
+  const { newIngrediente, setNewIngrediente, selectedProduct, setTotalCompra, bag, count} = useContext(ProductContext)
 
   const ingredientes: Ingredientes[] = selectedProduct.ingredientes || ([] as Ingredientes[])
   const [countIngredientes, setCountIngredientes] = useState<{ [key: string]: number }>({})
@@ -93,7 +93,6 @@ const IngredientePage = () => {
     const valorFloat = parseFloat(valorString.replace(',', '.'))
     return total + valorFloat * count
   }, 0)
-  const array = newIngrediente.map((e) => `${e.quantidade} x ${e.name}, `)
 
   const typeLanch = selectedProduct.tipo
 
@@ -121,7 +120,10 @@ const IngredientePage = () => {
     setNewIngrediente(addedIngredients)
     setCartUpdated(true)
 
+    bag.push(selectedProduct)
+
     return addedIngredients
+
   }
 
 
@@ -129,9 +131,6 @@ const IngredientePage = () => {
     if (cartUpdated) {
       setCartUpdated(false)
       setTotalCompra(total)
-      console.log(selectedProduct)
-      console.log('Tipo: ' + selectedProduct.tipo + '\nLanche: ' + selectedProduct.name + '\nQuantidade: '
-        + count + '\nTemperatura: ' + selectedProduct.temperatura + '\nAdicionar: ' + array + '\nTotal: ' + total.toFixed(2))
     }
   }, [newIngrediente, cartUpdated])
 

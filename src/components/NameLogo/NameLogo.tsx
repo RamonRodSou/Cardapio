@@ -32,7 +32,6 @@ const Titulo2 = styled(Typography)({
 const NameLogo = () => {
 
     const [user, setUser] = React.useState<User[]>([])
-    console.log(user)
 
     useEffect(() => {
         const fetchData = async () => {
