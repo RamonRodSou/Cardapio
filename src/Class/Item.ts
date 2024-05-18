@@ -1,6 +1,6 @@
 import IItem from "../Interface/IItem"
 
-export default abstract class Item implements IItem {
+export default class Item implements IItem {
 
     image: string
     name: string

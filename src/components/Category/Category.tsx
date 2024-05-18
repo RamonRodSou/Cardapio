@@ -1,6 +1,9 @@
 import { Tabs, Typography } from '@mui/material'
 import RetanguloBox from '../RetanguloBox/RetanguloBox'
+import { useContext } from "react"
 import * as React from 'react'
+import { ProductContext } from '../../contextApi/ProductContext'
+import { getProduct } from '../../server/get'
 
 type Props = {}
 
@@ -8,25 +11,21 @@ const BoxStyleSelected = {
     padding: '1rem',
 }
 
-const BoxStyle = {
-    padding: '1rem',
-    backgroundColor: 'var(--boxColor )',
-    color: 'var(--tituloNameCinza)'
-}
-
 const Category = (props: Props) => {
-
+    const { data, setSearch } = useContext(ProductContext)
     const [value, setValue] = React.useState(0)
 
+    const category = Array.from(new Set(data.map(e => e.tipo)))
+
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-        setValue(newValue);
-    };
-
-    function handle () {
-
-        console.log('teste')
+        setValue(newValue)
     }
-    
+
+    function handle(index: any) {
+        console.log(category[index])
+        setSearch(category[index])
+    }
+
     return (
         <Tabs
             value={value}
@@ -34,32 +33,14 @@ const Category = (props: Props) => {
             variant="scrollable"
             scrollButtons="auto"
         >
-
-            <RetanguloBox sx={BoxStyleSelected} handle={handle}>
-                <Typography>
-                    Todos
-                </Typography>
-            </RetanguloBox>
-
-            <RetanguloBox sx={BoxStyle} handle={handle}>
-                <Typography>
-                    Combos
-                </Typography>
-            </RetanguloBox>
-
-            <RetanguloBox sx={BoxStyle} handle={handle}>
-                <Typography>
-                    Rodizio
-                </Typography>
-            </RetanguloBox>
-
-            <RetanguloBox sx={BoxStyle} handle={handle}>
-                <Typography>
-                    Bebidas
-                </Typography>
-            </RetanguloBox>
+            {category.map((tipo, index) => (
+                <RetanguloBox sx={BoxStyleSelected} handle={() => handle(index)} key={index}>
+                    <Typography>
+                        {tipo}
+                    </Typography>
+                </RetanguloBox>
+            ))}
         </Tabs>
-
     )
 }
 
