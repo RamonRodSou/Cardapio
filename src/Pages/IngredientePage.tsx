@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import { Box, Grid, Typography, styled } from '@mui/material'
 import ilustracaoHamburguer from '../assets/img/burguer.webp'
 import ilustracaoCachorro from '../assets/img/hot.webp'
@@ -10,6 +10,7 @@ import { ProductContext } from '../contextApi/ProductContext'
 import RetanguloBox from '../components/RetanguloBox/RetanguloBox'
 import { Link } from 'react-router-dom'
 import Ingredientes from '../Class/Ingredientes'
+import Product from '../Class/Product'
 
 const Container = styled(Box)({
   display: 'flex',
@@ -61,14 +62,13 @@ const valorRealStyleDinheiro = {
 
 
 const IngredientePage = () => {
-  const { newIngrediente, setNewIngrediente, selectedProduct, setTotalCompra, bag, count} = useContext(ProductContext)
+  const { setNewIngrediente, selectedProduct, setSelectedProduct, setBag, count } = useContext(ProductContext)
 
   const ingredientes: Ingredientes[] = selectedProduct.ingredientes || ([] as Ingredientes[])
   const [countIngredientes, setCountIngredientes] = useState<{ [key: string]: number }>({})
-  const [cartUpdated, setCartUpdated] = useState<boolean>(false)
 
 
-
+//  Aumentar valor de cada Ingredientes
   function moreIngrediente(ingrediente: Ingredientes) {
     setCountIngredientes(prevCounts => ({
       ...prevCounts,
@@ -77,7 +77,7 @@ const IngredientePage = () => {
     return countIngredientes
   }
 
-
+//  Diminuir valor de cada Ingredientes
   function lessIngrediente(ingrediente: Ingredientes) {
     setCountIngredientes(prevCounts => ({
       ...prevCounts,
@@ -86,27 +86,20 @@ const IngredientePage = () => {
     return countIngredientes
   }
 
-
-
-  const valorIng = newIngrediente.reduce((total, ingrediente) => {
-    const valorString = ingrediente.valor.toString()
-    const valorFloat = parseFloat(valorString.replace(',', '.'))
-    return total + valorFloat * count
-  }, 0)
-
+  //Verifica qual vai ser a imagem tema da parte dos ingredientes, de acordo com o lanche
   const typeLanch = selectedProduct.tipo
 
+  // Formatação do valor
   const produto = parseFloat(selectedProduct.valor.toString().replace(',', '.'))
-  const total = produto * count + valorIng
   const totalNatela = (produto * count).toFixed(2)
   const totalNaTelaString = totalNatela.toString().replace('.', ',')
 
-
-  function handleAddCart(): Ingredientes[] {
+  const handleAddCart = () => {
+    if (!selectedProduct) return
     const addedIngredients: Ingredientes[] = []
     for (const ingrediente of ingredientes) {
       const count = countIngredientes[ingrediente.id] || 0
-      if (count) {
+      if (count > 0) {
         addedIngredients.push({
           id: ingrediente.id,
           image: ingrediente.image,
@@ -117,25 +110,22 @@ const IngredientePage = () => {
       }
     }
 
-    setNewIngrediente(addedIngredients)
-    setCartUpdated(true)
+  // Gera um ID único baseado no timestamp
+    const newCartId = `cart-${Date.now()}` 
+  
+    setBag(prevBag => [
+      ...prevBag,
+      { cartId: newCartId, produto: selectedProduct, ingredientes: addedIngredients }
+    ])
+  
+    // Limpa os ingredientes selecionados
+    setNewIngrediente([]) 
 
-    bag.push(selectedProduct)
-
-    return addedIngredients
-
+  // Redefine o produto selecionado
+    setSelectedProduct({} as Product) 
   }
-
-
-  useEffect(() => {
-    if (cartUpdated) {
-      setCartUpdated(false)
-      setTotalCompra(total)
-    }
-  }, [newIngrediente, cartUpdated])
-
-
-
+  
+  
   return (
     <Container>
       {typeLanch == "Hamburguer" ? (
@@ -165,13 +155,13 @@ const IngredientePage = () => {
           <Ingrediente key={ingrediente.id}>
             <Grid display={'flex'} justifyContent={'center'}>
               <Box>
-                <Typography variant='body1' sx={{ color: 'var(--letrasColor)', position: 'absolute', margin: '-4px',padding: '2px 5px',   backgroundColor: 'var(--containerIngrediente)', borderRadius: '6px' }}>
+                <Typography variant='body1' sx={{ color: 'var(--letrasColor)', position: 'absolute', margin: '-4px', padding: '2px 5px', backgroundColor: 'var(--containerIngrediente)', borderRadius: '6px' }}>
                   {countIngredientes[ingrediente.id] || 0}
                 </Typography>
               </Box>
               <ImgIngrediente src={ingrediente.image} alt={ingrediente.name} width={'80px'} />
             </Grid>
-            <Box display={'flex'} flexDirection={'row'}  justifyContent={'space-around'} alignItems={'center'} width={'100%'} margin={0.4}>
+            <Box display={'flex'} flexDirection={'row'} justifyContent={'space-around'} alignItems={'center'} width={'100%'} margin={0.4}>
               <Grid display={'flex'} flexDirection={'column'}>
                 <Typography variant='caption' sx={{ color: 'var(--letrasColor)' }}>
                   {ingrediente.name}
@@ -183,14 +173,14 @@ const IngredientePage = () => {
                 </Typography>
               </Grid>
               <Box >
-              <Grid onClick={() => (moreIngrediente(ingrediente))} sx={{ cursor: 'pointer' }}>
-                <ImgAdd src={iconAdd} alt='Botão adicionar produto' width={25} />
-              </Grid>
+                <Grid onClick={() => (moreIngrediente(ingrediente))} sx={{ cursor: 'pointer' }}>
+                  <ImgAdd src={iconAdd} alt='Botão adicionar produto' width={25} />
+                </Grid>
 
-              <Grid onClick={() => (lessIngrediente(ingrediente))} sx={{ cursor: 'pointer' }}>
-                <ImgAdd src={iconLess} alt='Botão adicionar produto' width={25}/>
-              </Grid>
-            </Box>
+                <Grid onClick={() => (lessIngrediente(ingrediente))} sx={{ cursor: 'pointer' }}>
+                  <ImgAdd src={iconLess} alt='Botão adicionar produto' width={25} />
+                </Grid>
+              </Box>
             </Box>
           </Ingrediente>
         ))}
