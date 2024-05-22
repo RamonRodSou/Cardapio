@@ -1,12 +1,9 @@
 import React, { createContext, useState } from "react";
 import Product from "../Class/Product";
 import Ingredientes from "../Class/Ingredientes";
+import CartItem from "../Class/CartItem";
 
-interface CartItem {
-  cartId: string;
-  produto: Product;
-  ingredientes: Ingredientes[];
-}
+
 
 interface ProductContextType {
   data: Product[];

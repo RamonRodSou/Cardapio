@@ -3,14 +3,15 @@ import { Box, Grid, Typography, styled } from '@mui/material'
 import { ProductContext } from '../contextApi/ProductContext'
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2'
 import cancel from '../assets/img/iconCancel.png'
+import iconHome from '../assets/img/iconHomer.png'
+import { Link } from 'react-router-dom'
 
 const TitlePage = styled(Typography)({
   fontFamily: 'Roboto Condensed',
   color: 'var(--title)',
-  fontSize: '2.3rem',
+  fontSize: '2rem',
   display: 'flex',
   flexDirection: 'column',
-  gap: '1rem'
 })
 
 const TypeItem = styled(Typography)({
@@ -59,15 +60,15 @@ const Bag = () => {
   const total = bag.reduce((acc, item) => {
     const valorProdutoString = item.produto.valor.toString()
     const valorProduto = parseFloat(valorProdutoString.replace(',', '.'))
-      const totalProduto = valorProduto * item.produto.count
-      const totalIngredientes = item.ingredientes.reduce((accIng, ingrediente) => {
+    const totalProduto = valorProduto * item.produto.count
+    const totalIngredientes = item.ingredientes.reduce((accIng, ingrediente) => {
       const valorIngredienteString = ingrediente.valor.toString()
       const valorIngrediente = parseFloat(valorIngredienteString.replace(',', '.'))
       return accIng + (valorIngrediente * ingrediente.quantidade)
     }, 0)
-      return acc + totalProduto + totalIngredientes
+    return acc + totalProduto + totalIngredientes
   }, 0)
-    const totalNatela = total.toFixed(2).toString().replace('.', ',')  
+  const totalNatela = total.toFixed(2).toString().replace('.', ',')
 
   const handleCancel = (cartId: string): void => {
     setBag(prevBag => prevBag.filter(item => item.cartId !== cartId))
@@ -80,8 +81,14 @@ const Bag = () => {
 
   return (
     <Box display={'flex'} flexDirection={'column'} gap={'1rem'} justifyContent={'space-between'}>
-      <Box display={'flex'} flexDirection={'column'} gap={'.5rem'} justifyContent={'space-between'} margin={'.5rem .5rem'}>
+      <Box display={'flex'} justifyContent={'space-between'} alignItems={'center'} margin={'0 .5rem'} >
+        <Link to={'/'}>
+          <img src={iconHome} alt='Icone para voltar a página inícial' />
+        </Link>
         <TitlePage>Carrinho</TitlePage>
+
+      </Box>
+      <Box display={'flex'} flexDirection={'column'} gap={'1.5rem'} justifyContent={'space-between'} margin={'.5rem .5rem'}>
         {bag.map((bagItem) => (
           <Grid key={bagItem.cartId} display={'flex'} justifyContent={'space-between'} sx={{ border: '1px solid #fff', padding: '.5rem', borderRadius: '10px' }}>
             <Cancel onClick={() => handleCancel(bagItem.cartId)}>

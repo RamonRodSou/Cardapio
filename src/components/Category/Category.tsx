@@ -4,13 +4,11 @@ import { useContext } from "react"
 import * as React from 'react'
 import { ProductContext } from '../../contextApi/ProductContext'
 
-type Props = {}
-
 const BoxStyleSelected = {
     padding: '1rem',
 }
 
-const Category = (props: Props) => {
+const Category = () => {
     const { data, setSearch, setAllProduct, allProduct } = useContext(ProductContext)
     const [value, setValue] = React.useState(0)
 
