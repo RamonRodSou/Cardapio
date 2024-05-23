@@ -131,7 +131,10 @@ const Bag = () => {
                   R$
                 </Title>
                 <Title>
-                  {(bagItem.produto.count * parseFloat(bagItem.produto.valor.toString().replace(',', '.'))).toFixed(2).replace('.', ',')}
+                {(bagItem.produto.count * parseFloat(bagItem.produto.valor.toString().replace(',', '.')) + 
+                bagItem.ingredientes.reduce((acc, ingrediente) => acc + (parseFloat(ingrediente.valor.toString().replace(',', '.')) * 
+                ingrediente.quantidade), 0)).toFixed(2).toString().replace('.', ',')}
+
                 </Title>
               </Box>
             </Grid2>

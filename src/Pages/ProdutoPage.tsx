@@ -55,7 +55,7 @@ const addStyle = {
 const ProdutoPage: React.FC<Props> = () => {
 
     const { id } = useParams<string>()
-    const { setPageBack, product, setProduct, temperatura, setTemperatura, count, setCount, selectedProduct } = useContext(ProductContext)
+    const { setPageBack, product, setProduct, temperatura, setTemperatura, count, setCount, selectedProduct, totalNaTelaString, setTotalNaTelaString } = useContext(ProductContext)
 
     if (!product) {
         return <div>Carregando...</div>
@@ -92,6 +92,20 @@ const ProdutoPage: React.FC<Props> = () => {
         setPageBack(true)
 
     }, [id, setPageBack])
+
+    useEffect(() => {
+        if (product && typeof product.valor !== 'undefined') {
+            const produto = parseFloat(product.valor.toString().replace(',', '.'))
+            if (!isNaN(produto)) {
+                const totalNatela = (produto * count).toFixed(2)
+                const totalNaTelaString = totalNatela.toString().replace('.', ',')
+                setTotalNaTelaString(totalNaTelaString)
+            } else {
+                setTotalNaTelaString('0,00')
+            }
+        }
+    }, [product, count])
+
     return (
         <Box>
             <Box key={product.id} display={'flex'} flexDirection={'column'} justifyContent={'space-between'}>
@@ -139,7 +153,7 @@ const ProdutoPage: React.FC<Props> = () => {
                         <Typography variant="body2" color={'var(--letrasColor)'}> Total </Typography>
                         <Grid display={'flex'} gap={1} alignItems={'center'}>
                             <Typography sx={valorRealStye}> R$: </Typography>
-                            <Typography sx={valorRealStyleDinheiro}>{product.valor}  </Typography>
+                            <Typography sx={valorRealStyleDinheiro}>{totalNaTelaString}  </Typography>
                         </Grid>
                     </Grid>
                     <Link to={`/produto/${product.id}/ingredientes`} style={{ textDecoration: 'none', color: 'var(--letrasColor)' }}>
