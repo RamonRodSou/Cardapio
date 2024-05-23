@@ -79,7 +79,8 @@ const IngredientePage = () => {
 
   // Calcula o valor total do produto com ingredientes
   useEffect(() => {
-    const produto = parseFloat(selectedProduct.valor.toString().replace(',', '.'))
+
+    const produto = (parseFloat(selectedProduct.valor.toString().replace(',', '.'))) * count
     const ingredientesTotal = ingredientes.reduce((total, ingrediente) => {
       const quantidade = countIngredientes[ingrediente.id] || 0
       const ingredienteValor = parseFloat(ingrediente.valor.toString().replace(',', '.'))

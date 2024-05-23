@@ -100,7 +100,7 @@ const ProdutoPage: React.FC<Props> = () => {
                 const totalNatela = (produto * count).toFixed(2)
                 const totalNaTelaString = totalNatela.toString().replace('.', ',')
                 setTotalNaTelaString(totalNaTelaString)
-            } else {
+            } else {  
                 setTotalNaTelaString('0,00')
             }
         }
