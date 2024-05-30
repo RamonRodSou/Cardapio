@@ -5,15 +5,14 @@ type Props = {
 
     children: any
     sx?: CSSProperties
-    handle(): any | void 
+    handle(): any
 }
 
 const Filter = styled(Box)({
 
     backgroundColor: 'var(--retangulosOp-color)',
     borderRadius: 20,
-    margin: '.5rem .5rem',
-
+    margin: '.5rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

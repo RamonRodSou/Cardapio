@@ -7,10 +7,10 @@ import ilustracaoPizza from '../assets/img/pizza.webp'
 import iconAdd from '../assets/img/iconAdd.webp'
 import iconLess from '../assets/img/iconLess.webp'
 import { ProductContext } from '../contextApi/ProductContext'
-import RetanguloBox from '../components/RetanguloBox/RetanguloBox'
-import { Link } from 'react-router-dom'
+
 import Ingredientes from '../Class/Ingredientes'
 import Product from '../Class/Product'
+import BtnLink from '../components/BtnLink/BtnLink'
 
 const Container = styled(Box)({
   display: 'flex',
@@ -40,10 +40,6 @@ const ImgIngrediente = styled('img')({
 
 const ImgAdd = styled('img')({})
 
-const addStyle = {
-  padding: '1rem',
-  borderRadius: 3,
-}
 const valorRealStye = {
   color: 'var(--retangulosOp-color)',
   fontSize: '1.56rem',
@@ -184,9 +180,8 @@ const IngredientePage = () => {
             <Typography sx={valorRealStyleDinheiro}>{totalNaTelaString}</Typography>
           </Grid>
         </Grid>
-        <Link to={`/produto/bag`} style={{ textDecoration: 'none', color: 'var(--letrasColor)' }}>
-          <RetanguloBox sx={addStyle} handle={handleAddCart}>Adicionar</RetanguloBox>
-        </Link>
+
+        <BtnLink handleAddCart={handleAddCart} link={`/produto/bag`}/>
       </Box>
     </Container>
   )

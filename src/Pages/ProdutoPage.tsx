@@ -6,7 +6,7 @@ import RetanguloBox from '../components/RetanguloBox/RetanguloBox'
 import { useParams } from 'react-router-dom'
 import { getProductById } from '../server/get'
 import { ProductContext } from '../contextApi/ProductContext'
-import { Link } from 'react-router-dom'
+import BtnLink from '../components/BtnLink/BtnLink'
 
 type Props = {
 }
@@ -46,11 +46,7 @@ const valorRealStyleDinheiro = {
     fontSize: '2.2rem',
     fontWeight: '600',
 }
-const addStyle = {
 
-    padding: '1rem',
-    borderRadius: 3,
-}
 
 const ProdutoPage: React.FC<Props> = () => {
 
@@ -156,9 +152,7 @@ const ProdutoPage: React.FC<Props> = () => {
                             <Typography sx={valorRealStyleDinheiro}>{totalNaTelaString}  </Typography>
                         </Grid>
                     </Grid>
-                    <Link to={`/produto/${product.id}/ingredientes`} style={{ textDecoration: 'none', color: 'var(--letrasColor)' }}>
-                        <RetanguloBox sx={addStyle} handle={handleAddCart}>Adicionar</RetanguloBox>
-                    </Link>
+                    <BtnLink handleAddCart={handleAddCart} link={`/produto/${product.id}/ingredientes`}/>
                 </Box>
             </Box>
         </Box>

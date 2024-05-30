@@ -5,6 +5,7 @@ import Grid2 from '@mui/material/Unstable_Grid2/Grid2'
 import cancel from '../assets/img/iconCancel.png'
 import iconHome from '../assets/img/iconHomer.png'
 import { Link } from 'react-router-dom'
+import BtnLink from '../components/BtnLink/BtnLink'
 
 const TitlePage = styled(Typography)({
   fontFamily: 'Roboto Condensed',
@@ -74,6 +75,12 @@ const Bag = () => {
     setBag(prevBag => prevBag.filter(item => item.cartId !== cartId))
   }
 
+
+  function handleAddCart() {
+    console.log(bag)
+  }
+
+
   useEffect(() => {
     setTotalCompra(total)
     setPageBack(false)
@@ -131,9 +138,9 @@ const Bag = () => {
                   R$
                 </Title>
                 <Title>
-                {(bagItem.produto.count * parseFloat(bagItem.produto.valor.toString().replace(',', '.')) + 
-                bagItem.ingredientes.reduce((acc, ingrediente) => acc + (parseFloat(ingrediente.valor.toString().replace(',', '.')) * 
-                ingrediente.quantidade), 0)).toFixed(2).toString().replace('.', ',')}
+                  {(bagItem.produto.count * parseFloat(bagItem.produto.valor.toString().replace(',', '.')) +
+                    bagItem.ingredientes.reduce((acc, ingrediente) => acc + (parseFloat(ingrediente.valor.toString().replace(',', '.')) *
+                      ingrediente.quantidade), 0)).toFixed(2).toString().replace('.', ',')}
 
                 </Title>
               </Box>
@@ -142,13 +149,17 @@ const Bag = () => {
         ))}
       </Box>
 
-      <Box display={'flex'} flexDirection={'row'} margin={'2rem auto'} gap={'.5rem'} alignItems={'center'}>
-        <Typography sx={valorRealStyleDinheiro}>Total:</Typography>
-        <Grid display={'flex'} gap={1} alignItems={'center'}>
-          <Typography sx={valorRealStyleDinheiro}>{totalNatela}</Typography>
+      <Box display={'flex'} flexDirection={'column'} margin={'.5rem'} gap={'.5rem'} alignItems={'flex-end'}  sx={{ position: 'fixed', bottom: '20px', right:'0'}}>
+        <Grid display={'flex'} flexDirection={'row'} gap={'.5rem'} alignItems={'center'} margin={'0 .5rem'}>
           <Typography sx={valorRealStye}>R$</Typography>
+          <Typography sx={valorRealStyleDinheiro}>{totalNatela}</Typography>
+        </Grid>
+        <Grid display={'flex'} flexDirection={'row'} gap={'.5rem'} alignItems={'center'} justifyContent={'space-between'} >
+          <BtnLink handleAddCart={handleAddCart} link={`/`} title={'Continuar'} />
+          <BtnLink handleAddCart={handleAddCart} link={`/`} title={'Finalizar'} />
         </Grid>
       </Box>
+
     </Box>
   )
 }
