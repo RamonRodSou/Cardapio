@@ -149,7 +149,7 @@ const Bag = () => {
         ))}
       </Box>
 
-      <Box display={'flex'} flexDirection={'column'} margin={'.5rem'} gap={'.5rem'} alignItems={'flex-end'}  sx={{ position: 'fixed', bottom: '20px', right:'0'}}>
+      <Box display={'flex'} flexDirection={'column'} margin={'.5rem'} gap={'.5rem'} alignItems={'flex-end'}  >
         <Grid display={'flex'} flexDirection={'row'} gap={'.5rem'} alignItems={'center'} margin={'0 .5rem'}>
           <Typography sx={valorRealStye}>R$</Typography>
           <Typography sx={valorRealStyleDinheiro}>{totalNatela}</Typography>
