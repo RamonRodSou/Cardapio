@@ -156,7 +156,7 @@ const Bag = () => {
         </Grid>
         <Grid display={'flex'} flexDirection={'row'} gap={'.5rem'} alignItems={'center'} justifyContent={'space-between'} >
           <BtnLink handleAddCart={handleAddCart} link={`/`} title={'Continuar'} />
-          <BtnLink handleAddCart={handleAddCart} link={`/`} title={'Finalizar'} />
+          <BtnLink handleAddCart={handleAddCart} link={`/produto/bag/pagamento`} title={'Finalizar'} />
         </Grid>
       </Box>
 
