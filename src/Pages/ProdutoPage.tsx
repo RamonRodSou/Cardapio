@@ -33,6 +33,8 @@ const botoesSyle = {
     borderRadius: 2,
     fontFamily: 'Roboto Condensed',
     fontSize: '1.5rem',
+    cursor:'pointer',
+
 }
 const valorRealStye = {
 
@@ -152,7 +154,7 @@ const ProdutoPage: React.FC<Props> = () => {
                             <Typography sx={valorRealStyleDinheiro}>{totalNaTelaString}  </Typography>
                         </Grid>
                     </Grid>
-                    <BtnLink handleAddCart={handleAddCart} link={`/produto/${product.id}/ingredientes`}/>
+                    <BtnLink  handleAddCart={handleAddCart} link={`/produto/${product.id}/ingredientes`}/>
                 </Box>
             </Box>
         </Box>
