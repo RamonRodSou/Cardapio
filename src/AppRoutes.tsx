@@ -31,6 +31,10 @@ function AppRoutes() {
           <Route path="/produto/:id/ingredientes" element={<IngredientePage/>} />
           <Route path="/produto/bag" element={<Bag/>} />
           <Route path="/produto/bag/pagamento" element={<Pagamento/>} />
+
+
+          <Route path="/*" element={<HomePage />} />
+
         </Routes>
       </BrowserRouter>
     </ProductProvider>
@@ -38,4 +42,4 @@ function AppRoutes() {
   )
 }
 
-export default AppRoutes
+export default AppRoutes 
