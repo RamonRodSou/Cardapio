@@ -5,7 +5,7 @@ import { vi } from 'vitest'
 
 describe("Testa componente BtnLink", () => {
 
-    test("Deve haver um componente Link", async () => {
+    it("Deve haver um componente Link", async () => {
         const mockHandleAddCart = vi.fn()
         const link = "/some-path"
         const title = "Adicionar ao Carrinho"

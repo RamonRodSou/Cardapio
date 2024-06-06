@@ -7,14 +7,14 @@ describe("Testa componente Search", () => {
     
     const mockState = vi.fn()
 
-    test("Deve haver um componente Link", async () => {
+    it("Deve haver um componente Link", async () => {
         render(<Search setSearch={mockState}/>)
 
         const searchBox = await screen.getByRole('textbox')
         expect(searchBox).toBeInTheDocument()
     });
 
-    test("Deve haver uma imagem", async () => {
+    it("Deve haver uma imagem", async () => {
         render(<Search setSearch={mockState}/>)
 
         const img = await screen.getByRole('img',{name: 'Lupa de Pesquisa'})

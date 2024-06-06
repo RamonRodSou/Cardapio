@@ -54,24 +54,24 @@ vi.mock("react-router-dom", () => ({
 
 describe("Testa componente NameLogo", () => {
 
-    test("Deve haver um titulo escrito com o primeiro nome do estabelecimento", async () => {
+    it("Deve haver um titulo escrito com o primeiro nome do estabelecimento", async () => {
 
         render(<NameLogo fetchUser={mockFetchUserFn} />)
         const title = await screen.findByText("Esquina", { selector: 'p' })
         expect(title).toBeInTheDocument()
     });
 
-    test("Deve haver um titulo escrito com o segundo nome do estabelecimento", async () => {
+    it("Deve haver um titulo escrito com o segundo nome do estabelecimento", async () => {
 
         render(<NameLogo fetchUser={mockFetchUserFn} />)
         const title = await screen.findByText("Da carne")
         expect(title).toBeInTheDocument()
     });
 
-    // test("Deve haver Logo do estabelecimento", async () => {
+    // it("Deve haver Logo do estabelecimento", async () => {
 
     //     render(<NameLogo fetchUser={mockFetchUserFn} />)
-    //     const logoComponent = await screen.findByTestId('logo-component');
+    //     const logoComponent = await screen.getByRole('Logo');
     //     expect(logoComponent).toBeInTheDocument()
     // });
 
