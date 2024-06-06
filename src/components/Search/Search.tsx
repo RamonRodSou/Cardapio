@@ -39,7 +39,7 @@ const Search: React.FC<Props> = ({ setSearch}) => {
                  label={
                     <div style={labelDiv}>
                         <img src={Lupa} alt="Lupa de Pesquisa" />
-                        <Typography> Pesquise</Typography>
+                        <Typography variant='subtitle1'>Pesquise</Typography>
                     </div>
                 }
 

@@ -1,12 +1,13 @@
 import { useContext, useEffect } from "react"
-import Category from "../components/Category/Category"
-import ProductContainer from "../components/Product/Product"
-import Search from "../components/Search/Search"
-import { ProductContext } from "../contextApi/ProductContext"
-import Product from "../Class/Product"
-import iconBag from '../assets/img/iconBag.png'
+import Category from "../../components/Category/Category"
+import ProductContainer from "../../components/Product/Product"
+import Search from "../../components/Search/Search"
+import { ProductContext } from "../../contextApi/ProductContext"
+import Product from "../../Class/Product"
+import iconBag from '../../assets/img/iconBag.png'
 import { Link } from "react-router-dom"
 import { Box } from "@mui/material"
+
 
 const Home = () => {
 

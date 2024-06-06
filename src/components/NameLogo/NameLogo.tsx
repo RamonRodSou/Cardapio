@@ -7,6 +7,10 @@ import { AdmAPIGet } from '../../server/AdmAPI';
 import BackPage from '../BackPage/BackPage';
 import User from '../../Class/User';
 
+interface IProps {
+    fetchUser: () => Promise<User[]>
+}
+
 const Titulo1 = styled(Typography)({
 
     fontSize: '1.5rem',
@@ -29,7 +33,7 @@ const Titulo2 = styled(Typography)({
 })
 
 
-const NameLogo = () => {
+const NameLogo = ({ fetchUser }: IProps) => {
 
     const [user, setUser] = React.useState<User[]>([])
 
@@ -74,7 +78,7 @@ const NameLogo = () => {
                             alignItems='center'
                             gap='.2rem'
                         >
-                            <img src={iconInstagram} alt="Logo Resenha do Chefes" />
+                            <img src={iconInstagram} alt="Logo Instagram" />
                             <Link
                                 href={item.instagramLink}
                                 underline="none"
@@ -84,7 +88,7 @@ const NameLogo = () => {
                             </Link>
                         </Box>
                     </Box>
-                    <Logo />
+                    <Logo data-testid="logo-component" />
                 </Box>
             ))}
         </div>

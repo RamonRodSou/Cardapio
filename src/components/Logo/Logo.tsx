@@ -6,7 +6,7 @@ type Props = {}
 const Logo = (props: Props) => {
     return (
         <Link to={`/`} style={{ textDecoration: 'none', color: 'var(--letrasColor)' }}>
-            <img src={logo} alt="Logo Resenha do Chefes" width={100} height={115} />
+            <img src={logo} alt="Logo" width={100} height={115} />
         </Link>
     )
 }
