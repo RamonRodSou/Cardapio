@@ -4,7 +4,6 @@ import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
 
 type Props = {
-
   initialValue?: number;
   onChange?: (value: number) => void;
 }

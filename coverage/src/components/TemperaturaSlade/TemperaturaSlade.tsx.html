@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>79/79</span>
+                <span class='fraction'>76/76</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>79/79</span>
+                <span class='fraction'>76/76</span>
             </div>
         
             
@@ -138,25 +138,7 @@
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -177,12 +159,24 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -225,28 +219,13 @@ import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
 &nbsp;
 type Props = {
-&nbsp;
   initialValue?: number;
   onChange?: (value: number) =&gt; void;
 }
 &nbsp;
-&nbsp;
-const MAX = 100;
-const MIN = 0;
-const marks = [
-  {
-    value: MIN,
-    label: '',
-  },
-  {
-    value: MAX,
-    label: '',
-  },
-];
-&nbsp;
 const StyleSlider = {
   color: '#EF2A39',
-  padding:' .3rem',
+  padding: ' .3rem',
   backgroundColor: 'unset',
 }
 &nbsp;
@@ -254,13 +233,25 @@ const TemperaturaSlade: React.FC&lt;Props&gt; = ({ initialValue = 60, onChange }
 &nbsp;
   const [val, setVal] = React.useState&lt;number&gt;(initialValue);
 &nbsp;
+  const MAX = 100;
+  const MIN = 0;
+  const marks = [
+    {
+      value: MIN,
+      label: '',
+    },
+    {
+      value: MAX,
+      label: '',
+    },
+  ];
+&nbsp;
   const handleChange = (_: Event, newValue: number | number[]) =&gt; {
     setVal(newValue as number);
     if (onChange) {
       onChange(newValue as number);
     }
   }
-&nbsp;
 &nbsp;
   return (
     &lt;Box sx={{ width: 140 }}&gt;
@@ -275,22 +266,22 @@ const TemperaturaSlade: React.FC&lt;Props&gt; = ({ initialValue = 60, onChange }
         min={MIN}
         max={MAX}
         onChange={handleChange}
-        
+&nbsp;
       /&gt;
       &lt;Box sx={{ display: 'flex', justifyContent: 'space-between' }}&gt;
         &lt;Typography
           variant="caption"
           onClick={<span class="fstat-no" title="function not covered" >() =&gt; setVal(MIN)}</span>
-          sx={{ cursor: 'pointer', color:'#1CC019'}}
+          sx={{ cursor: 'pointer', color: '#1CC019' }}
         &gt;
-        Morno
+          Morno
         &lt;/Typography&gt;
         &lt;Typography
           variant="caption"
           onClick={<span class="fstat-no" title="function not covered" >() =&gt; setVal(MAX)}</span>
           sx={{ cursor: 'pointer', color: '#EF2A39' }}
         &gt;
-        Quente
+          Quente
         &lt;/Typography&gt;
       &lt;/Box&gt;
     &lt;/Box&gt;
@@ -304,7 +295,7 @@ export default TemperaturaSlade;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-06T18:04:00.942Z
+                at 2024-06-06T20:36:27.192Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
