@@ -1,17 +1,9 @@
 import { fireEvent, render, screen } from "@testing-library/react"
 import TemperaturaSlade from "./TemperaturaSlade"
 
-
-
-
 describe("Testa componente TemperaturaSlade", () => {
 
-
     const onChangeMock = vi.fn()
-    const setValMock = vi.fn()
-
-    const MIN = 0;
-    const MAX = 100;
 
     it("Deve haver 2 typography, quente e morno", async () => {
         render(<TemperaturaSlade />)
@@ -38,7 +30,7 @@ describe("Testa componente TemperaturaSlade", () => {
     });
 
 
-    it("Deve haver um Slider e o valor inicial deve ser 60", async () => {
+    it("Deve haver um Slider e o valor inicial deve ser 60", async () => 
         render(<TemperaturaSlade />)
 
         const sliderElement = await screen.getByRole('slider')

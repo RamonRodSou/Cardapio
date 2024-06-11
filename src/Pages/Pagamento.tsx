@@ -1,5 +1,7 @@
-import { Box, FormControl, FormControlLabel, Grid, Radio, RadioGroup, TextField, Typography, styled } from '@mui/material'
-import React from 'react';
+import { Box, FormControl, FormControlLabel, Grid, RadioGroup, TextField, Typography, styled } from '@mui/material'
+import React, { useContext, useState } from 'react';
+import BtnLink from '../components/BtnLink/BtnLink';
+import { ProductContext, dadosUser } from '../contextApi/ProductContext';
 
 
 type Props = {}
@@ -15,8 +17,37 @@ const TextInput = styled(TextField)({
 const Pagamento = (props: Props) => {
 
     const [value, setValue] = React.useState('sim')
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue((event.target as HTMLInputElement).value);
+    const [name, setName] = useState<string>('')
+    const [phone, setPhone] = useState<number>(0)
+    const [obs, setObs] = useState<string>('')
+
+    const { dadosClient, setDadosClient } = useContext(ProductContext)
+
+
+    function handleChange (event: React.ChangeEvent<HTMLInputElement>) {
+        setValue((event.target as HTMLInputElement).value)
+    }
+
+    function handleName (event: React.ChangeEvent<HTMLInputElement>) {
+        setName(event.target.value)  
+    }
+
+    function handlePhone(event:React.ChangeEvent<HTMLInputElement>) {
+        const newPhone = parseFloat(event.target.value)
+        if (!isNaN(newPhone)) {
+          setPhone(newPhone)
+          console.log(newPhone)
+        }
+    }
+
+    function handleObs (event: React.ChangeEvent<HTMLInputElement>) {
+        setObs(event.target.value)
+    }
+
+    function handleSubmit() {
+        const dados: dadosUser = { name: name, phonen: phone, obs: obs }
+        setDadosClient([...dadosClient, dados])
+        console.log(dadosClient)
     }
 
     return (
@@ -32,6 +63,8 @@ const Pagamento = (props: Props) => {
                             name="nome"
                             placeholder="Digite seu nome"
                             variant="outlined"
+                            value={name}
+                            onChange={(handleName)}
                             fullWidth />
                     </span>
                     <span>
@@ -42,9 +75,11 @@ const Pagamento = (props: Props) => {
                         name="telefone"
                         placeholder="Digite seu telefone"
                         variant="outlined"
+                        value={phone}
+                        onChange={handlePhone}
                         fullWidth />
                     </span>
-                    <span>
+                    {/* <span>
                         <label>É WhatsApp?</label>
                         <RadioGroup
                             aria-labelledby="demo-controlled-radio-buttons-group"
@@ -56,7 +91,7 @@ const Pagamento = (props: Props) => {
                             <FormControlLabel value="sim" control={<Radio sx={{ 'color': '#fff' }} />} label="Sim" />
                             <FormControlLabel value="nao" control={<Radio sx={{ 'color': '#fff' }} />} label="Não" />
                         </RadioGroup>
-                    </span>
+                    </span> */}
                     <span>
                         <label>Obsevarção:</label>
                         <TextInput type="obs"
@@ -64,11 +99,13 @@ const Pagamento = (props: Props) => {
                             multiline
                             rows={4}
                             placeholder="Tem alguma observação?"
+                            value={obs}
+                            onChange={handleObs}
                             fullWidth />
                     </span>
-
+                    <BtnLink  handleAddCart={handleSubmit} link={`/concluido`}/>
                 </FormControl>
-            </Grid>
+            </Grid>/
         </Box >
     )
 }

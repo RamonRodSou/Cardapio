@@ -3,6 +3,13 @@ import Product from "../Class/Product"
 import Ingredientes from "../Class/Ingredientes"
 import CartItem from "../Class/CartItem"
 
+export type dadosUser = {
+
+  name: string
+  phonen: number
+  obs: string
+}
+
 interface ProductContextType {
   data: Product[]
   setData: React.Dispatch<React.SetStateAction<Product[]>>
@@ -10,6 +17,9 @@ interface ProductContextType {
   setNewIngrediente: React.Dispatch<React.SetStateAction<Ingredientes[]>>
   bag: CartItem[]
   setBag: React.Dispatch<React.SetStateAction<CartItem[]>>
+
+  dadosClient: dadosUser[]
+  setDadosClient: React.Dispatch<React.SetStateAction<dadosUser[]>>
 
   product: Product
   setProduct: React.Dispatch<React.SetStateAction<Product>>
@@ -43,6 +53,9 @@ export const ProductContext = createContext<ProductContextType>({
   setNewIngrediente: () => {},
   bag: [],
   setBag: () => {},
+  dadosClient:[],
+  setDadosClient:() => {},
+
 
   product: {} as Product,
   setProduct: () => {},
@@ -69,10 +82,13 @@ export const ProductContext = createContext<ProductContextType>({
   setTotalNaTelaString: () => {},
 })
 
+
+
 export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [data, setData] = useState<Product[]>([])
   const [newIngrediente, setNewIngrediente] = useState<Ingredientes[]>([])
   const [bag, setBag] = useState<CartItem[]>([])
+  const [dadosClient, setDadosClient] = useState<dadosUser[]>([])
 
   const [product, setProduct] = useState<Product>({} as Product)
   const [selectedProduct, setSelectedProduct] = useState<Product>({} as Product)
@@ -93,7 +109,8 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
     <ProductContext.Provider value={{
       data, setData, pageBack, setPageBack, product, setProduct,
       temperatura, setTemperatura, count, setCount, search, setSearch, isSearch, setIsSearch, selectedProduct, setSelectedProduct,
-      newIngrediente, setNewIngrediente, totalCompra, setTotalCompra, allProduct, setAllProduct, bag, setBag, totalNaTelaString, setTotalNaTelaString
+      newIngrediente, setNewIngrediente, totalCompra, setTotalCompra, allProduct, setAllProduct, bag, setBag, totalNaTelaString, setTotalNaTelaString,
+      dadosClient, setDadosClient
     }}>
       {children}
     </ProductContext.Provider>
