@@ -1,6 +1,5 @@
 import { Box, Button, FormControl, FormControlLabel, Grid, RadioGroup, TextField, Typography, styled } from '@mui/material'
 import React, { useContext, useState } from 'react';
-import BtnLink from '../components/BtnLink/BtnLink';
 import { ProductContext, dadosUser } from '../contextApi/ProductContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -53,15 +52,17 @@ const Pagamento = (props: Props) => {
     }
 
     function handleSubmit() {
-        const dados: dadosUser = { name: name, phone: phoneNumber, obs: obs }
+        const dados:dadosUser = { name: name, phone: phoneNumber, obs: obs }
         setDadosClient(dados)
-        console.log(dadosClient)
+        console.log(dados)
         console.log(bag)
 
         setBag([])
         setName('')
         setPhoneNumber(undefined)
         setObs('')
+
+        console.log(name, phoneNumber, obs)
 
         navigate('/')
 
