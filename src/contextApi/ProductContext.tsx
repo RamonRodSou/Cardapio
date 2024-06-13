@@ -39,6 +39,8 @@ interface ProductContextType {
   setCount: React.Dispatch<React.SetStateAction<number>>
   totalCompra: number
   setTotalCompra: React.Dispatch<React.SetStateAction<number>>
+  submitCount: number
+  setSubmitCount: React.Dispatch<React.SetStateAction<number>>
 
   search: string
   setSearch: React.Dispatch<React.SetStateAction<string>>
@@ -77,6 +79,8 @@ export const ProductContext = createContext<ProductContextType>({
   setCount: () => { },
   totalCompra: 1,
   setTotalCompra: () => { },
+  submitCount: 1, 
+  setSubmitCount:() => { },
 
   search: '',
   setSearch: () => { },
@@ -102,6 +106,8 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [temperatura, setTemperatura] = useState<number>(60)
   const [count, setCount] = useState<number>(1)
   const [totalCompra, setTotalCompra] = useState<number>(0)
+  const [submitCount, setSubmitCount] = useState<number>(1)
+
 
   const [search, setSearch] = useState<string>('')
   const [totalNaTelaString, setTotalNaTelaString] = useState<string>('')
@@ -112,7 +118,7 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
       data, setData, pageBack, setPageBack, product, setProduct,
       temperatura, setTemperatura, count, setCount, search, setSearch, isSearch, setIsSearch, selectedProduct, setSelectedProduct,
       newIngrediente, setNewIngrediente, totalCompra, setTotalCompra, allProduct, setAllProduct, bag, setBag, totalNaTelaString, setTotalNaTelaString,
-      dadosClient, setDadosClient
+      dadosClient, setDadosClient, submitCount, setSubmitCount
     }}>
       {children}
     </ProductContext.Provider>

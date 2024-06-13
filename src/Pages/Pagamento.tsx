@@ -1,4 +1,4 @@
-import { Box, Button, FormControl, FormControlLabel, Grid, RadioGroup, TextField, Typography, styled } from '@mui/material'
+import { Box, Button, FormControl, TextField, Typography, styled } from '@mui/material'
 import React, { useContext, useState } from 'react';
 import { ProductContext, dadosUser } from '../contextApi/ProductContext';
 import { useNavigate } from 'react-router-dom';
@@ -21,6 +21,19 @@ const DadosPessoasForm = styled('form')({
     borderRadius: '.5rem',
 })
 
+const FinalizarBtn = styled(Button)({
+
+    backgroundColor: 'var(--btnFinaizar-color)',
+    borderRadius: 20,
+    padding:'.8rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color:'var(--title)'
+    
+})
+
+
 
 const Pagamento = (props: Props) => {
 
@@ -29,7 +42,7 @@ const Pagamento = (props: Props) => {
     const [phoneNumber, setPhoneNumber] = useState<number>()
     const [obs, setObs] = useState<string>('')
 
-    const { dadosClient, setDadosClient, bag, setBag } = useContext(ProductContext)
+    const { dadosClient, setDadosClient, bag, setBag, submitCount, setSubmitCount} = useContext(ProductContext)
     const navigate = useNavigate();
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -54,17 +67,19 @@ const Pagamento = (props: Props) => {
     function handleSubmit() {
         const dados:dadosUser = { name: name, phone: phoneNumber, obs: obs }
         setDadosClient(dados)
-        console.log(dados)
-        console.log(bag)
 
         setBag([])
         setName('')
         setPhoneNumber(undefined)
         setObs('')
 
-        console.log(name, phoneNumber, obs)
+        if (submitCount >= 5) {
+            setSubmitCount(1);
+        } else {
+            setSubmitCount(submitCount + 1);
+        }
 
-        navigate('/')
+        navigate('/produto/bag/pagamento/concluido')
 
     }
 
@@ -99,19 +114,6 @@ const Pagamento = (props: Props) => {
                             required
                             fullWidth />
                     </span>
-                    {/* <span>
-                        <label>É WhatsApp?</label>
-                        <RadioGroup
-                            aria-labelledby="demo-controlled-radio-buttons-group"
-                            name="yesOrNot"
-                            value={value}
-                            onChange={handleChange}
-                            sx={{ 'display': 'flex', 'flexDirection': 'row' }}
-                        >
-                            <FormControlLabel value="sim" control={<Radio sx={{ 'color': '#fff' }} />} label="Sim" />
-                            <FormControlLabel value="nao" control={<Radio sx={{ 'color': '#fff' }} />} label="Não" />
-                        </RadioGroup>
-                    </span> */}
                     <span>
                         <label>Obsevarção:</label>
                         <TextInput type="obs"
@@ -123,9 +125,9 @@ const Pagamento = (props: Props) => {
                             onChange={handleObs}
                             fullWidth />
                     </span>
-                    <Button type='submit'>
+                    <FinalizarBtn type='submit'>
                         Finalizar
-                    </Button>
+                    </FinalizarBtn>
                 </FormControl>
             </DadosPessoasForm>
         </Box >

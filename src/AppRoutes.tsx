@@ -8,6 +8,7 @@ import { useContext, useEffect } from 'react'
 import IngredientePage from './Pages/IngredientePage'
 import Bag from './Pages/Bag'
 import Pagamento from './Pages/Pagamento'
+import Concluido from './Pages/Concluido'
 
 
 
@@ -30,14 +31,14 @@ function AppRoutes() {
   return (
     <ProductProvider>
       <BrowserRouter>
-        <NameLogo/>
+        <NameLogo />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/produto/:id" element={<ProdutoPage />} />
           <Route path="/produto/:id/ingredientes" element={<IngredientePage />} />
           <Route path="/produto/bag" element={<Bag />} />
           <Route path="/produto/bag/pagamento" element={<Pagamento />} />
-
+          <Route path="/produto/bag/pagamento/concluido" element={<Concluido />} />
 
           <Route path="/*" element={<HomePage />} />
 

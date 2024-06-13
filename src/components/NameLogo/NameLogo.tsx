@@ -8,7 +8,7 @@ import BackPage from '../BackPage/BackPage';
 import User from '../../Class/User';
 
 interface IProps {
-    fetchUser: () => Promise<User[]>
+    fetchUser?: () => Promise<User[]>
 }
 
 const Titulo1 = styled(Typography)({
