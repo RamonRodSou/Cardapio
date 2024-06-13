@@ -77,7 +77,6 @@ const Bag = () => {
 
 
   function handleAddCart() {
-    console.log(bag)
   }
 
 
@@ -155,8 +154,8 @@ const Bag = () => {
           <Typography sx={valorRealStyleDinheiro}>{totalNatela}</Typography>
         </Grid>
         <Grid display={'flex'} flexDirection={'row'} gap={'.5rem'} alignItems={'center'} justifyContent={'space-between'} >
-          <BtnLink handleAddCart={handleAddCart} link={`/`} title={'Continuar'} />
-          <BtnLink handleAddCart={handleAddCart} link={`/produto/bag/pagamento`} title={'Finalizar'} />
+          <BtnLink link={`/`} title={'Continuar'} />
+          <BtnLink link={`/produto/bag/pagamento`} title={'Finalizar'} />
         </Grid>
       </Box>
 

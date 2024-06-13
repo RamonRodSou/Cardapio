@@ -6,7 +6,7 @@ import CartItem from "../Class/CartItem"
 export type dadosUser = {
 
   name: string
-  phonen: number
+  phone: number | undefined
   obs: string
 }
 
@@ -18,8 +18,8 @@ interface ProductContextType {
   bag: CartItem[]
   setBag: React.Dispatch<React.SetStateAction<CartItem[]>>
 
-  dadosClient: dadosUser[]
-  setDadosClient: React.Dispatch<React.SetStateAction<dadosUser[]>>
+  dadosClient: dadosUser
+  setDadosClient: React.Dispatch<React.SetStateAction<dadosUser>>
 
   product: Product
   setProduct: React.Dispatch<React.SetStateAction<Product>>
@@ -48,38 +48,40 @@ interface ProductContextType {
 
 export const ProductContext = createContext<ProductContextType>({
   data: [],
-  setData: () => {},
+  setData: () => { },
   newIngrediente: [],
-  setNewIngrediente: () => {},
+  setNewIngrediente: () => { },
   bag: [],
-  setBag: () => {},
-  dadosClient:[],
-  setDadosClient:() => {},
+  setBag: () => { },
+  dadosClient: {
+    name: '', phone: undefined, obs: ''
+  },
+  setDadosClient: () => { },
 
 
   product: {} as Product,
-  setProduct: () => {},
+  setProduct: () => { },
   selectedProduct: {} as Product,
-  setSelectedProduct: () => {},
+  setSelectedProduct: () => { },
 
   pageBack: true,
-  setPageBack: () => {},
+  setPageBack: () => { },
   isSearch: true,
-  setIsSearch: () => {},
+  setIsSearch: () => { },
   allProduct: true,
-  setAllProduct: () => {},
+  setAllProduct: () => { },
 
   temperatura: 0,
-  setTemperatura: () => {},
+  setTemperatura: () => { },
   count: 1,
-  setCount: () => {},
+  setCount: () => { },
   totalCompra: 1,
-  setTotalCompra: () => {},
+  setTotalCompra: () => { },
 
   search: '',
-  setSearch: () => {},
+  setSearch: () => { },
   totalNaTelaString: '',
-  setTotalNaTelaString: () => {},
+  setTotalNaTelaString: () => { },
 })
 
 
@@ -88,7 +90,7 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [data, setData] = useState<Product[]>([])
   const [newIngrediente, setNewIngrediente] = useState<Ingredientes[]>([])
   const [bag, setBag] = useState<CartItem[]>([])
-  const [dadosClient, setDadosClient] = useState<dadosUser[]>([])
+  const [dadosClient, setDadosClient] = useState<dadosUser>({name: '', phone: undefined, obs: ''})
 
   const [product, setProduct] = useState<Product>({} as Product)
   const [selectedProduct, setSelectedProduct] = useState<Product>({} as Product)

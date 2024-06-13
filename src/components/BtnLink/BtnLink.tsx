@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import RetanguloBox from '../RetanguloBox/RetanguloBox'
 
 type Props = {
-    handleAddCart: any
+    handleAddCart?: any
     link: string
-    title: string
+    title?: string
 }
 
 const addStyle = {
