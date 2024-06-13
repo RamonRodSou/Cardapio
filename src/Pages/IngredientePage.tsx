@@ -41,7 +41,7 @@ const ImgIngrediente = styled('img')({
 const ImgAdd = styled('img')({})
 
 const valorRealStye = {
-  color: 'var(--retangulosOp-color)',
+  color: 'var(--valor-color)',
   fontSize: '1.56rem',
   fontWeight: '600',
 }

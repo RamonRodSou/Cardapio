@@ -44,7 +44,7 @@ const Cancel = styled(Box)({
 })
 
 const valorRealStye = {
-  color: 'var(--retangulosOp-color)',
+  color: 'var(--valor-color)',
   fontSize: '1.96rem',
   fontWeight: '600',
 }

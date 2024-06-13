@@ -9,13 +9,13 @@ const Concluido = (props: Props) => {
     const { dadosClient, setDadosClient, submitCount, setSubmitCount, totalCompra } = useContext(ProductContext)
 
     return (
-        <Box 
-            display={'flex'} 
-            height={'70vh'} 
-            flexDirection={'column'} 
-            alignItems={'center'} 
-            justifyContent={'space-around'} 
-            margin={'4rem 2rem'} 
+        <Box
+            display={'flex'}
+            height={'70vh'}
+            flexDirection={'column'}
+            alignItems={'center'}
+            justifyContent={'space-around'}
+            margin={'4rem 2rem'}
             gap={'1rem'}
             border={'1px solid #fff'}
             padding={'1rem'}
@@ -26,7 +26,11 @@ const Concluido = (props: Props) => {
                 <Typography variant='body1' sx={{ fontSize: '1.5rem' }}>{dadosClient.name}</Typography>
                 <Typography variant='body1' sx={{ fontSize: '1.5rem' }}>{dadosClient.phone}</Typography>
             </Grid>
-            <Typography variant='body1' sx={{ fontSize: '2.5rem', color: 'var(--valor-color)' }}>Total: R$ {totalCompra.toFixed(2)}</Typography>
+            <Grid display={'flex'} gap={'1rem'} alignItems={'center'}>
+                <Typography variant='body1' sx={{ fontSize: '2.7rem', fontWeight: 600, color: 'var(--valor-color)' }}>R$</Typography>
+                <Typography variant='body1' sx={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--letrasColor)' }}>{totalCompra.toFixed(2)}</Typography>
+
+            </Grid>
 
         </Box>
     )
