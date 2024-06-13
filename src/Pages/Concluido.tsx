@@ -11,7 +11,7 @@ const Concluido = (props: Props) => {
     return (
         <Box
             display={'flex'}
-            height={'70vh'}
+            height={'60vh'}
             flexDirection={'column'}
             alignItems={'center'}
             justifyContent={'space-around'}
@@ -20,7 +20,11 @@ const Concluido = (props: Props) => {
             border={'1px solid #fff'}
             padding={'1rem'}
         >
-            <Typography variant='body1' sx={{ fontSize: '2.3rem' }}>Pedido Concluído</Typography>
+            <Grid display={'flex'} flexDirection={'column'} alignItems={'center'}>
+                <Typography variant='body1' sx={{ fontSize: '2.3rem' }}>Pedido</Typography>
+                <Typography variant='body1' sx={{ fontSize: '2.3rem' }}>Concluído</Typography>
+
+            </Grid>
             <Typography variant='body1' sx={{ fontSize: '4.5rem', textAlign: 'center' }}>#{submitCount}</Typography>
             <Grid display={'flex'} flexDirection={'column'} alignItems={'center'}>
                 <Typography variant='body1' sx={{ fontSize: '1.5rem' }}>{dadosClient.name}</Typography>
@@ -28,7 +32,7 @@ const Concluido = (props: Props) => {
             </Grid>
             <Grid display={'flex'} gap={'1rem'} alignItems={'center'}>
                 <Typography variant='body1' sx={{ fontSize: '2.7rem', fontWeight: 600, color: 'var(--valor-color)' }}>R$</Typography>
-                <Typography variant='body1' sx={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--letrasColor)' }}>{totalCompra.toFixed(2)}</Typography>
+                <Typography variant='body1' sx={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--letrasColor)' }}>{totalCompra.toFixed(2).toString().replace('.', ',')}</Typography>
 
             </Grid>
 
