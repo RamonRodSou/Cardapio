@@ -25,7 +25,7 @@ const TituloProduto = styled(Typography)({
     fontWeight: 'inherit',
 
 })
-const botoesSyle = {
+const btnLess = {
 
     padding: '.5rem',
     width: '20px',
@@ -34,7 +34,18 @@ const botoesSyle = {
     fontFamily: 'Roboto Condensed',
     fontSize: '1.5rem',
     cursor:'pointer',
+}
 
+const btnMore = {
+
+    padding: '.5rem',
+    width: '20px',
+    height: '20px',
+    borderRadius: 2,
+    fontFamily: 'Roboto Condensed',
+    fontSize: '1.5rem',
+    cursor:'pointer',
+    backgroundColor:'var(--BtnMore-color)'
 }
 const valorRealStye = {
 
@@ -138,9 +149,9 @@ const ProdutoPage: React.FC<Props> = () => {
                     <Grid display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'}>
                         <Typography variant="caption" color={'var(--letrasColor)'}>Quantidade</Typography>
                         <Grid display={'flex'} alignItems={'center'} justifyContent={'space-between'}>
-                            <RetanguloBox sx={botoesSyle} handle={handleLess} > - </RetanguloBox>
+                            <RetanguloBox sx={btnLess} handle={handleLess} > - </RetanguloBox>
                             <Typography variant="body1" color={'var(--letrasColor)'}> {count} </Typography>
-                            <RetanguloBox sx={botoesSyle} handle={handleMore} > + </RetanguloBox>
+                            <RetanguloBox sx={btnMore} handle={handleMore} > + </RetanguloBox>
                         </Grid>
                     </Grid>
                 </Box>

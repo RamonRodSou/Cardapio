@@ -7,13 +7,13 @@ import { Link } from 'react-router-dom';
 import { ProductContext } from '../../contextApi/ProductContext';
 import Product from '../../Class/Product';
 
-type Props = {
-
+interface IProps {
+  fetchProduct?: () => Promise<Product[]> 
   handleSelect(product: Product): void
 }
 const containerBurguer: CSSProperties = {
 
-  width: '160px',
+  width: '160px', 
   height: '220px',
   backgroundColor: 'var(--boxColor )',
   flexDirection: 'column',
@@ -38,7 +38,7 @@ const ImgProduto = styled('img')({
   borderRadius: '15px'
 })
 
-const ProductContainer: React.FC<Props> = ({ handleSelect }) => {
+const ProductContainer = ({ handleSelect, fetchProduct }: IProps) => {
 
 
   const { data, setData, setTemperatura, setCount, search, isSearch, setPageBack, setNewIngrediente } = useContext(ProductContext)
@@ -61,7 +61,7 @@ const ProductContainer: React.FC<Props> = ({ handleSelect }) => {
       setCount(1)
       setNewIngrediente([])
       setPageBack(false)
-    };
+    }
     fetchData()
 
   }, [])

@@ -19,6 +19,7 @@ const Concluido = (props: Props) => {
             gap={'1rem'}
             border={'1px solid #fff'}
             padding={'1rem'}
+            borderRadius={'20px'}
         >
             <Grid display={'flex'} flexDirection={'column'} alignItems={'center'}>
                 <Typography variant='body1' sx={{ fontSize: '2.3rem' }}>Pedido</Typography>

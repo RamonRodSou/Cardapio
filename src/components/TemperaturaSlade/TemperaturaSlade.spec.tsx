@@ -1,9 +1,9 @@
 import { fireEvent, render, screen } from "@testing-library/react"
 import TemperaturaSlade from "./TemperaturaSlade"
+const onChangeMock = vi.fn()
 
 describe("Testa componente TemperaturaSlade", () => {
 
-    const onChangeMock = vi.fn()
 
     it("Deve haver 2 typography, quente e morno", async () => {
         render(<TemperaturaSlade />)
@@ -30,7 +30,7 @@ describe("Testa componente TemperaturaSlade", () => {
     });
 
 
-    it("Deve haver um Slider e o valor inicial deve ser 60", async () => 
+    it("Deve haver um Slider e o valor inicial deve ser 60", async () => {
         render(<TemperaturaSlade />)
 
         const sliderElement = await screen.getByRole('slider')
@@ -42,7 +42,7 @@ describe("Testa componente TemperaturaSlade", () => {
         render(<TemperaturaSlade onChange={onChangeMock} />)
 
         const sliderElement = await screen.getByRole('slider')
-        fireEvent.change(sliderElement, { target: { value: 80 } })
+        fireEvent.change(sliderElement, { target: { value: 80 } }) 
         expect(onChangeMock).toHaveBeenCalledWith(80)
         expect(sliderElement).toHaveAttribute('value', '80')
     });

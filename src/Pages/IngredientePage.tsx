@@ -11,6 +11,7 @@ import { ProductContext } from '../contextApi/ProductContext'
 import Ingredientes from '../Class/Ingredientes'
 import Product from '../Class/Product'
 import BtnLink from '../components/BtnLink/BtnLink'
+import RetanguloBox from '../components/RetanguloBox/RetanguloBox'
 
 const Container = styled(Box)({
   display: 'flex',
@@ -49,6 +50,29 @@ const valorRealStyleDinheiro = {
   color: 'var(--letrasColor)',
   fontSize: '2.2rem',
   fontWeight: '600',
+}
+
+const btnMore = {
+
+  padding: '.4rem',
+  width: '8px',
+  height: '8px',
+  borderRadius: 1,
+  fontFamily: 'Roboto Condensed',
+  fontSize: '1.5rem',
+  cursor: 'pointer',
+  backgroundColor: 'var(--BtnMore-color)'
+}
+
+const btnLess = {
+
+  padding: '.4rem',
+  width: '8px',
+  height: '8px',
+  borderRadius: 1,
+  fontFamily: 'Roboto Condensed',
+  fontSize: '1.5rem',
+  cursor: 'pointer',
 }
 
 const IngredientePage = () => {
@@ -161,12 +185,8 @@ const IngredientePage = () => {
                 </Typography>
               </Grid>
               <Box>
-                <Grid onClick={() => moreIngrediente(ingrediente)} sx={{ cursor: 'pointer' }}>
-                  <ImgAdd src={iconAdd} alt='Botão adicionar produto' width={25} />
-                </Grid>
-                <Grid onClick={() => lessIngrediente(ingrediente)} sx={{ cursor: 'pointer' }}>
-                  <ImgAdd src={iconLess} alt='Botão adicionar produto' width={25} />
-                </Grid>
+                <RetanguloBox sx={btnMore} handle={() => moreIngrediente(ingrediente)} > + </RetanguloBox>
+                <RetanguloBox sx={btnLess} handle={() => lessIngrediente(ingrediente)} > - </RetanguloBox>
               </Box>
             </Box>
           </Ingrediente>
@@ -181,7 +201,7 @@ const IngredientePage = () => {
           </Grid>
         </Grid>
 
-        <BtnLink handleAddCart={handleAddCart} link={`/produto/bag`}/>
+        <BtnLink handleAddCart={handleAddCart} link={`/produto/bag`} />
       </Box>
     </Container>
   )

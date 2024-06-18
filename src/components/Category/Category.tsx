@@ -1,17 +1,20 @@
 import { Tabs, Typography } from '@mui/material'
 import RetanguloBox from '../RetanguloBox/RetanguloBox'
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import * as React from 'react'
 import { ProductContext } from '../../contextApi/ProductContext'
+
+interface IProps {
+    fetchProduct?: () => Promise<string[]>
+}
 
 const BoxStyleSelected = {
     padding: '1rem',
 }
+const Category = ({ fetchProduct }: IProps) => {
 
-const Category = () => {
-    const { data, setSearch, setAllProduct, allProduct } = useContext(ProductContext)
+    const { data, setData, setSearch, setAllProduct, allProduct } = useContext(ProductContext)
     const [value, setValue] = React.useState(0)
-
     const [selectedIndex, setSelectedIndex] = React.useState(-1)
 
     const category = Array.from(new Set(data.map(e => e.tipo)))
@@ -32,6 +35,7 @@ const Category = () => {
         setSelectedIndex(-1)
     }
 
+
     return (
         <Tabs
             value={value}
@@ -42,7 +46,7 @@ const Category = () => {
 
         >
             <RetanguloBox
-                sx={{ ...BoxStyleSelected, backgroundColor: allProduct ? 'red' : 'green'}}
+                sx={{ ...BoxStyleSelected, backgroundColor: allProduct ? 'red' : 'green' }}
                 handle={handleAll}
             >
                 <Typography>
@@ -51,7 +55,7 @@ const Category = () => {
             </RetanguloBox>
             {category.map((tipo, index) => (
                 <RetanguloBox
-                    sx={{ ...BoxStyleSelected, backgroundColor: !allProduct && selectedIndex === index ? 'red' : 'green'}}
+                    sx={{ ...BoxStyleSelected, backgroundColor: !allProduct && selectedIndex === index ? 'red' : 'green' }}
                     handle={() => handle(index)}
                     key={index}
                 >
@@ -65,3 +69,6 @@ const Category = () => {
 }
 
 export default Category
+
+
+
